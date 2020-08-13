@@ -1,0 +1,16 @@
+[book]
+title = "matrix-media-repo administration"
+author = "t2bot.io"
+description = "Administrative information for matrix-media-repo"
+src = "."
+
+[build]
+build-dir = "../books/matrix-media-repo"
+create-missing = true
+
+[preprocessor.index]
+
+[preprocessor.links]
+
+[output.html]
+additional-css = []
