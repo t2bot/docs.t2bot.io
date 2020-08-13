@@ -1,0 +1,16 @@
+[book]
+title = "$$PROJECT$$ administration"
+author = "t2bot.io"
+description = "Administrative information for $$PROJECT$$"
+src = "."
+
+[build]
+build-dir = "../books/$$PROJECT$$"
+create-missing = true
+
+[preprocessor.index]
+
+[preprocessor.links]
+
+[output.html]
+additional-css = []
