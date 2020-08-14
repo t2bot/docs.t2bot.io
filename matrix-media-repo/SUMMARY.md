@@ -11,3 +11,5 @@
     - [Docker](./installing/method/docker.md)
     - [Downloads](./installing/method/download.md)
     - [Compilation](./installing/method/compilation.md)
+- [Deployment](./deployment/README.md)
+  - [Example: nginx](./deployment/nginx.md)
