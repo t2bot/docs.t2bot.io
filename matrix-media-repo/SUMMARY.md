@@ -14,3 +14,4 @@
 - [Deployment](./deployment/README.md)
   - [Example: nginx](./deployment/nginx.md)
 - [Configuration](./configuration/README.md)
+  - [Calculating memory requirements](./configuration/memory.md)
