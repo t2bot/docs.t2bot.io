@@ -1,4 +1,4 @@
-# Environments
+# Intended environments
 
 The media repo is meant to deployed in high-traffic or high-yield environments where media
 management is important for operation. This generally excludes small or individual use homeservers

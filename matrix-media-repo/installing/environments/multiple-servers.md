@@ -7,7 +7,7 @@ for all of the homeservers in the organization.
 
 An architecture diagram for this style of deployment would be:
 
-![media-repo-collective.png](../img/media-repo-collective.png)
+![media-repo-collective.png](../../img/media-repo-collective.png)
 
 Note that the media repo will still make requests to the homeserver, and thus will need appropriate
 access to them.

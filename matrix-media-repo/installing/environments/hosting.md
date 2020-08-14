@@ -9,7 +9,7 @@ better fit.
 For more complicated structures, such as multi-region or size differences in the offering, the
 following infrastructure diagram might apply:
 
-![media-repo-hosting-providers.png](../img/media-repo-hosting-providers.png)
+![media-repo-hosting-providers.png](../../img/media-repo-hosting-providers.png)
 
 Each cluser is essentially a "Multiple Servers" style deployment with a shared cache layer across
 the entire DC or region. This cache layer can be used by the media repo instances to more easily share
