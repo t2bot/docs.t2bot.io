@@ -1,3 +1,3 @@
 # Calculating memory requirements
 
-TBD.
+TBD
