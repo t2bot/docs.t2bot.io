@@ -13,3 +13,4 @@
     - [Compilation](./installing/method/compilation.md)
 - [Deployment](./deployment/README.md)
   - [Example: nginx](./deployment/nginx.md)
+- [Configuration](./configuration/README.md)
