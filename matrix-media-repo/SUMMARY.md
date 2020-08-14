@@ -19,6 +19,7 @@
     - [S3](./configuration/s3-datastore.md)
   - [Split configs/per-domain](./configuration/per-domain.md)
   - [Calculating memory requirements](./configuration/memory.md)
+  - [Calculating storage requirements](./configuration/storage.md)
   - [General configuration](./configuration/general.md)
     - [Logging](./configuration/logging.md)
     - [Forwarded addresses](./configuration/forwarded-addresses.md)
