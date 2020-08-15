@@ -27,7 +27,7 @@
     - [Database pool](./configuration/database-pool.md)
     - [Timeouts](./configuration/timeouts.md)
 - [Uploads](./uploads/README.md)
-- [Downloads](./downloads/README.md)
+- [Downloads (remote media)](./downloads/README.md)
 - [Thumbnails](./thumbnails/README.md)
 - [Identicons](./identicons/README.md)
 - [URL previews](./url-previews/README.md)
