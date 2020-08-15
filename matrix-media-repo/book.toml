@@ -1,7 +1,7 @@
 [book]
-title = "matrix-media-repo administration"
+title = "matrix-media-repo"
 author = "t2bot.io"
-description = "Administrative information for matrix-media-repo"
+description = "Information for matrix-media-repo"
 src = "."
 
 [build]
@@ -14,3 +14,4 @@ create-missing = true
 
 [output.html]
 additional-css = []
+git-repository-url = "https://github.com/t2bot/docs.t2bot.io/tree/master/matrix-media-repo"

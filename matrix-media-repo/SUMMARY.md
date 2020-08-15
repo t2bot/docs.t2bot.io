@@ -50,3 +50,9 @@
 - [Quarantine / abuse mitigation](./quarantine/README.md)
 - [MSC2448: Blurhash](./blurhash/README.md)
 - [MSC2706: IPFS](./ipfs/README.md)
+
+<!--
+---
+
+- [Guide: Test](./guides/test.md)
+-->
