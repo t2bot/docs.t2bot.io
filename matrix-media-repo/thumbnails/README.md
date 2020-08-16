@@ -90,7 +90,7 @@ small to avoid letting resource usage exceed expectations.
 ## Thumbnail types
 
 The `types` controls which mimetypes of media the media repo should try to thumbnail. The media
-repo supports the mimetypes listed above, with more being possible in the future.
+repo supports the mimetypes listed in the sample config, with more being possible in the future.
 
 **Note**: `image/svg+xml` requires [ImageMagick](https://imagemagick.org/index.php) to be available
 to the media repo. The Docker image contains the appropriate binaries for this to happen.
