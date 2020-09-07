@@ -20,7 +20,7 @@ repo:
 database:
     # Currently only PostgreSQL is supported. This is *not* the same as your
     # homeserver's database.
-    portgres: "postgres://your_username:your_password@localhost/database_name?sslmode=require"
+    postgres: "postgres://your_username:your_password@localhost/database_name?sslmode=require"
 homeservers:
     - name: example.org
       csApi: "https://example.org"
