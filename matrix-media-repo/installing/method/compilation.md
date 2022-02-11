@@ -1,6 +1,6 @@
 # Compilation
 
-Go 1.14 or higher is required to compile the media repo.
+Go 1.16 is required to compile the media repo.
 
 **Note**: The `master` branch of the media repo is potentially unstable! Be sure to check out a
 tagged release for safety.

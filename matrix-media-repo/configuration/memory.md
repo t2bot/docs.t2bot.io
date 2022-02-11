@@ -10,7 +10,6 @@ A formula to get the approximate memory usage would be:
 50mb
 + (uploads.maxBytes * 2)
 + (downloads.maxBytes * (downloads.numWorkers / 5))
-+ downloads.cache.maxSizeBytes
 + (urlPreviews.maxPageSizeBytes * 2)
 + (thumbnails.maxSourceBytes * 2)
 ```

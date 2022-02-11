@@ -34,6 +34,7 @@ thumbnails:
     - "image/gif"
     - "image/heif"
     - "image/webp"
+    #- "image/jxl" # Be sure to have ImageMagick installed to thumbnail JPEG XL files
     #- "image/svg+xml" # Be sure to have ImageMagick installed to thumbnail SVG files
 ```
 

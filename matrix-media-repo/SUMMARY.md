@@ -34,8 +34,6 @@
   - [Security](./url-previews/security.md)
   - [oEmbed](./url-previews/oembed.md)
 - [Cache](./cache/README.md)
-  - [In-process cache](./cache/memory.md)
-  - [Redis](./cache/redis.md)
 - [Metrics](./metrics/README.md)
 - [Shared secret authentication](./shared-secret/README.md)
 - [Access token cache](./access-token-cache/README.md)
