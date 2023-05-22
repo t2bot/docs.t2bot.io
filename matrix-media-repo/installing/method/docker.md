@@ -8,7 +8,7 @@ docker run \
     --rm -it \
     -p 8000:8000 \
     -v /etc/matrix-media-repo:/data \
-    turt2live/matrix-media-repo:latest
+    turt2live/matrix-media-repo:v1.2.13
 ```
 
 A list of available tags can be found on
