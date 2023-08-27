@@ -58,8 +58,7 @@ for just that domain:
 * `downloads.expireAfterDays` - because remote media downloads are not for any particular domain.
 * `thumbnails.expireAfterDays` - because thumbnails aren't associated with any particular domain.
 * `urlPreviews.expireAfterDays` - because previews aren't associated with any particular domain.
-* `featureSupport.IPFS.builtInDaemon` - because spawning multiple daemons doesn't make sense.
-* `featureSupport.redis` - because the cache is repo-wide.
+* `redis` - because the cache is repo-wide.
 
 An example configuration structure could be:
 
