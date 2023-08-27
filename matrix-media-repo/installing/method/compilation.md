@@ -28,7 +28,8 @@ git clone https://github.com/Microsoft/vcpkg.git
 cd vcpkg
 .\bootstrap-vcpkg.bat
 .\vcpkg integrate install
-.\vcpkg install libheif:x64-windows
+.\vcpkg install libde265:x64-windows libde265:x86-windows
+.\vcpkg install libheif:x64-windows libheif:x86-windows
 ```
 
 You may need to update your `PKG_CONFIG_PATH` to include `.\installed\x64-windows\lib\pkgconfig`
@@ -41,4 +42,4 @@ After that's all set up, reopen your terminal and run the build steps again.
 
 ## Linux users
 
-You will need `libheif-dev` installed.
+You will need `libde265-dev` and `libheif-dev` installed.
