@@ -28,6 +28,7 @@ git clone https://github.com/Microsoft/vcpkg.git
 cd vcpkg
 .\bootstrap-vcpkg.bat
 .\vcpkg integrate install
+.\vcpkg install libjpeg-turbo:x64-windows libjpeg-turbo:x86-windows
 .\vcpkg install libde265:x64-windows libde265:x86-windows
 .\vcpkg install libheif:x64-windows libheif:x86-windows
 ```
@@ -42,4 +43,4 @@ After that's all set up, reopen your terminal and run the build steps again.
 
 ## Linux users
 
-You will need `libde265-dev` and `libheif-dev` installed.
+You will need `libjpeg-turbo-dev`, `libde265-dev` and `libheif-dev` installed.
