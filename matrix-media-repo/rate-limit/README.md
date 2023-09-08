@@ -1,3 +1,3 @@
 # Rate limiting
 
-**TODO**
+**TODO**: Actually write docs.

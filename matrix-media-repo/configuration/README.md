@@ -9,12 +9,12 @@ The sample configuration can be found [on GitHub](https://github.com/turt2live/m
 
 ## Basic configuration
 
-The following is the minimum required information to make use of the media repo:
+The following is the minimum required information to make use of MMR:
 
 ```yaml
 repo:
-    # Generally the bind address should be local as the media repo should be
-    # behind a reverse proxy.
+    # Generally the bind address should be local as MMR should be behind a
+    # reverse proxy. If using Docker, set this to `0.0.0.0`.
     bindAddress: '127.0.0.1'
     port: 8000
 database:
@@ -28,7 +28,7 @@ admins:
     - "@your_username:example.org"
 datastores:
     - type: file
-      enabled: true
+      id: "my_file_datastore"
       forKinds: ["all"]
       opts:
         path: /data/media

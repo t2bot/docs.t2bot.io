@@ -14,12 +14,11 @@ The configuration for a file-based datastore is as follows:
 ```yaml
 datastores:
   - type: file
-    enabled: true
+    id: "my_file_datastore"
     forKinds: ["all"]
     opts:
       path: /var/matrix/media
 ```
 
-The `path` is simply where the media will be placed. Note that if the path is expected to change
-then a second datastore with the new path must be created, then use the datastore management APIs to
-move the data. It cannot be simply copy/pasted to a new directory.
+The `path` is simply where the media will be placed. If the `path` changes, be sure to keep the
+`id` the same so MMR knows where to access it.

@@ -15,7 +15,7 @@ A configuration for an S3 datastore would be:
 ```yaml
 datastores:
   - type: s3
-    enabled: true
+    id: "my_s3_datastore"
     forKinds: ["all"]
     opts:
       tempPath: "/tmp/mediarepo_s3_upload"
@@ -38,3 +38,12 @@ recommended) to leave this within the container - it does not need a volume to b
 
 The remaining settings should all be supplied by the S3 provider, though the names of things might be
 slightly different. For example, `accessKeyId` might just be an "access key" or simply "key ID".
+
+## Supported providers
+
+MMR is validated to work with the following S3 providers. Others may work, however support is
+limited for anything not listed below.
+
+* [Amazon S3](https://aws.amazon.com/s3/)
+* [MinIO](https://min.io/)
+* [DigitalOcean Spaces](https://www.digitalocean.com/products/spaces)
