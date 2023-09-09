@@ -8,8 +8,8 @@ tagged release for safety.
 The following can be run to compile your own binaries for matrix-media-repo:
 
 ```bash
-mkdir matrix-media-repo
-git clone https://github.com/turt2live/matrix-media-repo.git .
+git clone https://github.com/turt2live/matrix-media-repo.git
+cd matrix-media-repo
 ./build.sh
 ```
 
