@@ -10,3 +10,8 @@ section of this documentation), something similar to the following can be run:
 ```bash
 ./media_repo -config /etc/matrix-media-repo/media-repo.yaml
 ```
+
+## Linux
+
+Note that on Linux you may need to install `libde265-dev` and `libheif-dev` before MMR will
+start.
