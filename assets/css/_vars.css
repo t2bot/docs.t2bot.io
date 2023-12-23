@@ -1,0 +1,8 @@
+:root {
+  --bg-color: #000;
+  --fg-color: #fff;
+  --bg-start-color: #2A1640;
+  --fg-link-color: rgba(255, 255, 255, 0.75);
+  --fg-link-hover-color: rgba(255, 255, 255, 1);
+  --fg-footer-color: rgba(255, 255, 255, 0.75);
+}

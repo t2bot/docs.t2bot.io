@@ -1,0 +1,25 @@
+{
+  "name": "docs.t2bot.io",
+  "version": "1.0.0",
+  "description": "t2bot.io documentation",
+  "private": true,
+  "author": "t2bot.io",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/t2bot/docs.t2bot.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/t2bot/docs.t2bot.io/issues"
+  },
+  "homepage": "https://github.com/t2bot/docs.t2bot.io#readme",
+  "scripts": {
+    "build": "cuttlebelle && npm run build:css",
+    "watch": "cuttlebelle -w",
+    "build:css": "cleancss --inline all -o site/assets/css/site.css assets/css/site.css"
+  },
+  "dependencies": {
+    "clean-css-cli": "^5.6.3",
+    "cuttlebelle": "^1.0.0-alpha.80"
+  }
+}
