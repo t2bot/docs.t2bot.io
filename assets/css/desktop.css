@@ -21,14 +21,17 @@ html,body {
 }
 
 main {
-	padding: 1rem;
-	width: 75%;
-	max-width: 900px;
+  width: 80%;
+	max-width: 1200px;
 	min-width: 300px;
-	margin: auto;
-	margin-top: 50px;
-	margin-bottom: 50px;
-	text-align: center;
+  margin-left: 192px;
+	margin-top: 32px;
+	margin-bottom: 64px;
+  font-weight: 300;
+}
+
+main h1, main h2 {
+  font-weight: 800;
 }
 
 header {
