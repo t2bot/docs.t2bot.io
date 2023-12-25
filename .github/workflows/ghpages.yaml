@@ -1,0 +1,51 @@
+name: Deploy site
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          npm install
+
+      - name: Build
+        run: |
+          npm run build
+
+      - name: Merge
+        run: |
+          npm run merge
+
+      - name: Package
+        run: |
+          tar --dereference --hard-dereference --directory ./_site -cvf "$RUNNER_TEMP/artifact.tar" .
+
+      - name: Upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: 'github-pages'
+          path: ${{ runner.temp }}/artifact.tar
+          retention-days: 1
+          if-no-files-found: error
+
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+      actions: read
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
