@@ -4,5 +4,10 @@
   "installation",
   "installation/config",
   "installation/server-names",
-  "installation/methods"
+  "installation/methods",
+  "deployment",
+  "deployment/horizontal-scaling",
+  "deployment/high-availability",
+  "upgrading",
+  "upgrading/to-130"
 ]

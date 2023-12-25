@@ -17,7 +17,6 @@ const DocsPage = ({ _body, _ID, docsFor, titlePrefix, _pages }) => (
 					const toc = tocs[docsFor];
 					const ia = ka.replace(docsFor + '/', '');
 					const ib = kb.replace(docsFor + '/', '');
-					console.log("@@", ia, ib);
 					if (toc.includes(ia) && toc.includes(ib)) {
 						return toc.indexOf(ia) - toc.indexOf(ib);
 					}
