@@ -1,7 +1,6 @@
-title: matrix-media-repo - Redirect
+title: matrix-media-repo - Introduction
 header:
   - /_shared/header.md
-  - header.md
 main:
   - body.md
 footer:

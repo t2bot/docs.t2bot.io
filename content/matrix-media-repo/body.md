@@ -1,6 +1,1 @@
----
-layout: docs_page
-docsFor: matrix-media-repo
----
-
-# Matrix Media Repo
+You should be redirected to the latest documentation shortly.
