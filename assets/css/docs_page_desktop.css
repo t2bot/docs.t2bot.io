@@ -6,6 +6,7 @@
 
 .docs-page .toc {
   width: 192px;
+  min-width: 192px;
   border-right: 1px solid var(--accent-border-color);
   padding: 8px 0;
 }
