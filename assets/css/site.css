@@ -4,3 +4,6 @@
 
 @import url("desktop.css");
 @import url("mobile.css");
+
+@import url("docs_page_desktop.css");
+@import url("docs_page_mobile.css");

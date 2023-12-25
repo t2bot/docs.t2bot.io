@@ -15,4 +15,9 @@
 		text-align: left;
     margin: 0;
 	}
+
+  main {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
 }
