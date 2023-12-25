@@ -1,0 +1,1077 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>matrix-media-repo</title>
+        <meta name="robots" content="noindex" />
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Information for matrix-media-repo">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="intro.html">Introduction</a></li><li class="chapter-item expanded "><a href="installing/index.html"><strong aria-hidden="true">1.</strong> Installation and requirements</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="installing/environments.html"><strong aria-hidden="true">1.1.</strong> Intended environments</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="installing/environments/medium-large.html"><strong aria-hidden="true">1.1.1.</strong> Medium/large servers</a></li><li class="chapter-item expanded "><a href="installing/environments/multiple-servers.html"><strong aria-hidden="true">1.1.2.</strong> Multiple servers</a></li><li class="chapter-item expanded "><a href="installing/environments/hosting.html"><strong aria-hidden="true">1.1.3.</strong> Hosting providers</a></li></ol></li><li class="chapter-item expanded "><a href="installing/methods.html"><strong aria-hidden="true">1.2.</strong> Installation methods</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="installing/method/docker.html"><strong aria-hidden="true">1.2.1.</strong> Docker</a></li><li class="chapter-item expanded "><a href="installing/method/download.html"><strong aria-hidden="true">1.2.2.</strong> Downloads</a></li><li class="chapter-item expanded "><a href="installing/method/compilation.html"><strong aria-hidden="true">1.2.3.</strong> Compilation</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="deployment/index.html"><strong aria-hidden="true">2.</strong> Deployment</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="deployment/nginx.html"><strong aria-hidden="true">2.1.</strong> Example: nginx</a></li><li class="chapter-item expanded "><a href="deployment/horizontal_scaling.html"><strong aria-hidden="true">2.2.</strong> Horizontal scaling</a></li></ol></li><li class="chapter-item expanded "><a href="upgrading/index.html"><strong aria-hidden="true">3.</strong> Upgrading</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="upgrading/130.html"><strong aria-hidden="true">3.1.</strong> Upgrading to v1.3.0</a></li></ol></li><li class="chapter-item expanded "><a href="configuration/index.html"><strong aria-hidden="true">4.</strong> Configuration</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="configuration/datastores.html"><strong aria-hidden="true">4.1.</strong> Datastores</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="configuration/file-datastore.html"><strong aria-hidden="true">4.1.1.</strong> File-based</a></li><li class="chapter-item expanded "><a href="configuration/s3-datastore.html"><strong aria-hidden="true">4.1.2.</strong> S3</a></li></ol></li><li class="chapter-item expanded "><a href="configuration/per-domain.html"><strong aria-hidden="true">4.2.</strong> Split configs/per-domain</a></li><li class="chapter-item expanded "><a href="configuration/memory.html"><strong aria-hidden="true">4.3.</strong> Calculating memory requirements</a></li><li class="chapter-item expanded "><a href="configuration/storage.html"><strong aria-hidden="true">4.4.</strong> Calculating storage requirements</a></li><li class="chapter-item expanded "><a href="configuration/general.html"><strong aria-hidden="true">4.5.</strong> General configuration</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="configuration/logging.html"><strong aria-hidden="true">4.5.1.</strong> Logging</a></li><li class="chapter-item expanded "><a href="configuration/forwarded-addresses.html"><strong aria-hidden="true">4.5.2.</strong> Forwarded addresses</a></li><li class="chapter-item expanded "><a href="configuration/federation.html"><strong aria-hidden="true">4.5.3.</strong> Federation</a></li><li class="chapter-item expanded "><a href="configuration/database-pool.html"><strong aria-hidden="true">4.5.4.</strong> Database pool</a></li><li class="chapter-item expanded "><a href="configuration/timeouts.html"><strong aria-hidden="true">4.5.5.</strong> Timeouts</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="uploads/index.html"><strong aria-hidden="true">5.</strong> Uploads</a></li><li class="chapter-item expanded "><a href="downloads/index.html"><strong aria-hidden="true">6.</strong> Downloads (remote media)</a></li><li class="chapter-item expanded "><a href="thumbnails/index.html"><strong aria-hidden="true">7.</strong> Thumbnails</a></li><li class="chapter-item expanded "><a href="identicons/index.html"><strong aria-hidden="true">8.</strong> Identicons</a></li><li class="chapter-item expanded "><a href="url-previews/index.html"><strong aria-hidden="true">9.</strong> URL previews</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="url-previews/security.html"><strong aria-hidden="true">9.1.</strong> Security</a></li><li class="chapter-item expanded "><a href="url-previews/oembed.html"><strong aria-hidden="true">9.2.</strong> oEmbed</a></li></ol></li><li class="chapter-item expanded "><a href="cache/index.html"><strong aria-hidden="true">10.</strong> Cache</a></li><li class="chapter-item expanded "><a href="metrics/index.html"><strong aria-hidden="true">11.</strong> Metrics</a></li><li class="chapter-item expanded "><a href="shared-secret/index.html"><strong aria-hidden="true">12.</strong> Shared secret authentication</a></li><li class="chapter-item expanded "><a href="access-token-cache/index.html"><strong aria-hidden="true">13.</strong> Access token cache</a></li><li class="chapter-item expanded "><a href="archival/index.html"><strong aria-hidden="true">14.</strong> Imports, exports, and archiving</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="archival/exports.html"><strong aria-hidden="true">14.1.</strong> Exports</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="archival/gdpr.html"><strong aria-hidden="true">14.1.1.</strong> GDPR</a></li></ol></li><li class="chapter-item expanded "><a href="archival/imports.html"><strong aria-hidden="true">14.2.</strong> Imports</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="archival/import-from-synapse.html"><strong aria-hidden="true">14.2.1.</strong> From Synapse</a></li><li class="chapter-item expanded "><a href="archival/import-from-export.html"><strong aria-hidden="true">14.2.2.</strong> From Export</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="quotas/index.html"><strong aria-hidden="true">15.</strong> Quotas</a></li><li class="chapter-item expanded "><a href="rate-limit/index.html"><strong aria-hidden="true">16.</strong> Rate limiting</a></li><li class="chapter-item expanded "><a href="quarantine/index.html"><strong aria-hidden="true">17.</strong> Quarantine / abuse mitigation</a></li><li class="chapter-item expanded "><a href="blurhash/index.html"><strong aria-hidden="true">18.</strong> MSC2448: Blurhash</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">matrix-media-repo</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/t2bot/docs.t2bot.io/tree/master/matrix-media-repo" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<p><a href="https://github.com/turt2live/matrix-media-repo">matrix-media-repo</a> (aka MMR) is a highly customizable
+multi-domain media repository for Matrix. Intended for medium to large deployments, this media
+repo de-duplicates media while being fully compliant with the Matrix specification.</p>
+<p>Smaller/individual homeservers can still use this project, though it may be difficult to set
+up or have higher than expected resource consumption. <strong>If you're looking for an S3 connector,
+please consider using <a href="https://github.com/matrix-org/synapse-s3-storage-provider">synapse-s3-storage-provider</a>
+instead.</strong></p>
+<h2 id="support"><a class="header" href="#support">Support</a></h2>
+<p>Community help and support is available at <a href="https://matrix.to/#/#mediarepo:t2bot.io">#mediarepo:t2bot.io</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="installing"><a class="header" href="#installing">Installing</a></h1>
+<p>MMR can be installed using Docker or the official binaries. Compiling it yourself is an option,
+though not typically recommended.</p>
+<h2 id="requirements"><a class="header" href="#requirements">Requirements</a></h2>
+<p>The depolyment requirements vary depending on which environment you're deploying for (see
+&quot;intended environments&quot;), however some general guidelines are:</p>
+<ul>
+<li>A modern processor with some cores available (a <code>t2.small</code> or <code>t2.medium</code> will generally be fine).</li>
+<li>A sizable disk or access to an S3-like service. The size depends on intended use cases.</li>
+<li>1-2GB of memory, depending on configuration and usage.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="intended-environments"><a class="header" href="#intended-environments">Intended environments</a></h1>
+<p>MMR is intended for high-traffic environments. Typically, these will be either large servers
+or hosting providers where pooling media resources is ideal. Smaller homeservers can use MMR
+as well, though they won't usually get the same benefits as larger deployments.</p>
+<p><strong>Small/individual server owners should consider using their homeserver's built-in media repo
+instead.</strong> Deploying MMR can be complicated, and support rooms will assume basic fundamental
+knowledge of reverse proxies and Matrix when diagnosing problems.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="mediumlarge-individual-server"><a class="header" href="#mediumlarge-individual-server">Medium/large individual server</a></h1>
+<p>Homeservers which have more than 1000 Monthly Active Users (MAU) or which see an upload rate of
+a steady 0.5Hz will fit this category. Other metrics to consider are how many rooms the server
+is in and how much media is being shared in those rooms. For example, a homeserver may only have
+a few users on it and a few uploads an hour, but might partcipate in rooms which share gigabytes
+worth of media every day - those servers might still see a benefit of using this project.</p>
+<p>For this deployment, servers will need a reverse proxy which can route media requests to MMR,
+leaving the other Matrix requests going to the homeserver. More information on this
+setup can be found in the &quot;Reverse Proxy Setup&quot; section of this documentation.</p>
+<h2 id="resource-requirements"><a class="header" href="#resource-requirements">Resource requirements</a></h2>
+<p>In this setup it is usually expected that either the Docker image or binaries will be used
+alongside the process running the homeserver itself. For instance, if you're using Synapse
+then usually MMR will be running on the same host alongside Synapse.</p>
+<p>Normally the system specifications for your homeserver will have enough overhead to also run
+an MMR instance.</p>
+<p>For clarity though: the CPU requirements are usually minimal (1-2 cores), and the memory usage
+can be calculated per the configuration section of this documentation. The disk requirements
+can be mitigated using S3 or an S3-like service, or by referencing the configuration section of
+this documentation.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="multiple-servers"><a class="header" href="#multiple-servers">Multiple servers</a></h1>
+<p>When several servers are being operated by the same entity, it can be beneficial to use a media
+repo which de-duplicates across all the available hosts. For example, an organization which has
+departmental homeservers will generally have a single media repo deployment which serves media
+for all of the homeservers in the organization.</p>
+<p>An architecture diagram for this style of deployment would be:</p>
+<p><img src="installing/environments/../../img/media-repo-collective.png" alt="media-repo-collective.png" /></p>
+<p>Note that MMR will still make requests to the homeserver, and thus will need appropriate
+access to them.</p>
+<h2 id="resource-requirements-1"><a class="header" href="#resource-requirements-1">Resource requirements</a></h2>
+<p>Deployments taking this shape usually rely on Docker or binaries on a dedicated host near the
+homeserver instances.</p>
+<p>Much like medium/large deployments, the CPU requirements are minimal (1-2 cores should be fine),
+and the memory requirements can be calculated by referencing the configuration section of this
+documentation. Disk space requirements can be mitigated with S3 or an S3-like service, or by
+referencing the configuration section of this documentation.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="hosting-providers"><a class="header" href="#hosting-providers">Hosting providers</a></h1>
+<p>Hosting providers offering homeservers of any size can make use of MMR to lower costs
+associated with hosting media, and to manage/report usage of the media repository.</p>
+<p>MMR can scale horizontally to cover thousands of servers on one logical media repo. See
+the &quot;Deployment&quot; section for more information on how to configure this setup.</p>
+<p>A legacy architecture is to put a few hundred servers onto a single MMR instance, as MMR
+previously could not horizontally scale. A Redis layer was shared across all the MMR instances
+to supply a datacenter-wide cache without having to put thousands of servers onto that media
+repo. Documentation for this setup is available <a href="https://github.com/t2bot/docs.t2bot.io/blob/dc7f69e44d07fc436614a7486ebc7fefd1ece07d/matrix-media-repo/installing/environments/hosting.md">here</a>.</p>
+<h2 id="resource-requirements-2"><a class="header" href="#resource-requirements-2">Resource requirements</a></h2>
+<p>Generally it is expected that hosting providers will use Docker as an installation method. CPU
+requirements are generally low (4-6 cores for about 500 hosts), however disk space and memory
+can be significant across all deployed instances.</p>
+<p>To help keep individual processes working efficiently, it is recommended to deploy approximately
+1 MMR instance per 500 possible hosts.</p>
+<p>Disk space is strongly recommended to be managed with S3 or an S3-like service. Mounting a
+volume is possible, though usually datacenter deployments prefer to have zero ties to physical
+disks.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="installation-methods"><a class="header" href="#installation-methods">Installation methods</a></h1>
+<p>MMR can be installed using Docker or the official binaries. Compiling it yourself is an option,
+though not typically recommended.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="docker"><a class="header" href="#docker">Docker</a></h1>
+<p>After preparing a configuration file at <code>/etc/matrix-media-repo/media-repo.yaml</code> (see
+configuration section of this documentation), something similar to the following can be run:</p>
+<pre><code class="language-bash">docker run \
+    --rm -it \
+    -p 127.0.0.1:8000:8000 \
+    -v /etc/matrix-media-repo:/data \
+    turt2live/matrix-media-repo:v1.3.0
+</code></pre>
+<p>A list of available tags can be found on
+<a href="https://hub.docker.com/r/turt2live/matrix-media-repo/tags">Docker Hub</a>.</p>
+<p><strong>Note</strong>: Using <code>latest</code> is not recommended. Please use a tagged version instead.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="downloads"><a class="header" href="#downloads">Downloads</a></h1>
+<p>The latest official builds of the media repo's binaries can be found on
+<a href="https://github.com/turt2live/matrix-media-repo/releases">GitHub</a>. Download the one for your platform
+or compile your own.</p>
+<p>After preparing a configuration file at <code>/etc/matrix-media-repo/media-repo.yaml</code> (see configuration
+section of this documentation), something similar to the following can be run:</p>
+<pre><code class="language-bash">./media_repo -config /etc/matrix-media-repo/media-repo.yaml
+</code></pre>
+<h2 id="linux"><a class="header" href="#linux">Linux</a></h2>
+<p>Note that on Linux you may need to install <code>libde265-dev</code> and <code>libheif-dev</code> before MMR will
+start.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="compilation"><a class="header" href="#compilation">Compilation</a></h1>
+<p>Go 1.20 is required to compile the media repo.</p>
+<p><strong>Note</strong>: The <code>master</code> branch of the media repo is potentially unstable! Be sure to check out a
+tagged release for safety.</p>
+<p>The following can be run to compile your own binaries for matrix-media-repo:</p>
+<pre><code class="language-bash">git clone https://github.com/turt2live/matrix-media-repo.git
+cd matrix-media-repo
+./build.sh
+</code></pre>
+<p>Once built, there should be binaries in <code>./bin</code> ready for deployment.</p>
+<p>To use the binaries, follow the instructions for running the downloaded binaries.</p>
+<h2 id="windows-users"><a class="header" href="#windows-users">Windows users</a></h2>
+<p><code>./build.sh</code> won't work out of the box for you, likely complaining about <code>pkg-config</code> not being found.
+To fix this, follow the pkg-config setup instructions <a href="https://gtk-rs.org/gtk4-rs/stable/latest/book/installation_windows.html#pkg-config">here</a>
+and run the following:</p>
+<pre><code class="language-bash">git clone https://github.com/Microsoft/vcpkg.git
+cd vcpkg
+.\bootstrap-vcpkg.bat
+.\vcpkg integrate install
+.\vcpkg install libde265:x64-windows libde265:x86-windows
+.\vcpkg install libheif:x64-windows libheif:x86-windows
+</code></pre>
+<p>You may need to update your <code>PKG_CONFIG_PATH</code> to include <code>.\installed\x64-windows\lib\pkgconfig</code>
+and <code>.\installed\x86-windows\lib\pkgconfig</code> from the <code>vcpkg</code> checkout.</p>
+<p>You may also need to update your <code>PATH</code> to include <code>.\installed\x64-windows\bin</code> and
+<code>.\installed\x86-windows\bin</code>, again from the <code>vcpkg</code> checkout.</p>
+<p>After that's all set up, reopen your terminal and run the build steps again.</p>
+<h2 id="linux-users"><a class="header" href="#linux-users">Linux users</a></h2>
+<p>You will need <code>libde265-dev</code> and <code>libheif-dev</code> installed.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="deployment"><a class="header" href="#deployment">Deployment</a></h1>
+<p>MMR must run behind a reverse proxy in order to support SSL/TLS - it does not have
+configuration options for enabling this on its own.</p>
+<p>The reverse proxy <em>must</em> pass through the <code>Host</code> header to MMR such that it matches
+a domain specified in the config. For example, if your homeserver's name is <code>example.org</code>, then
+MMR <em>must</em> receive <code>Host: example.org</code> regardless of how the request got to the reverse
+proxy.</p>
+<p>An example scenario where the <code>Host</code> header can change is in server delegation (common in
+hosting providers): the <code>Host</code> the reverse proxy is approached with might not match the server
+name and thus will need to manually rewrite the <code>Host</code> header being proxied to MMR.</p>
+<p>Other proxy headers, like <code>X-Forwarded-For</code>, are recommended to be sent to MMR for
+identification in the logs. In the specific case of <code>X-Forwarded-For</code>, for any requests MMR
+needs to make to the homeserver it will do so with the <code>X-Forwarded-For</code> header applied to
+help ensure that the user's IP history doesn't reveal MMR's IP address.</p>
+<p>Cache headers and other response headers should be left managed by MMR and not
+intercepted or changed by the reverse proxy (except <code>Server</code>, that can be safely overwritten).</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="example-nginx"><a class="header" href="#example-nginx">Example: nginx</a></h1>
+<p>Configuring nginx to proxy your homeserver alongside the media repo is fairly simple with
+just a few proxy directives. Assuming your client and federation APIs are handled by the
+same <code>server</code> block, the following can be used as a reference:</p>
+<pre><code class="language-ini">server {
+  listen 443 ssl;
+  listen [::]:443 ssl;
+
+  # SSL options not shown - ensure the certificates are valid for your
+  # homeserver deployment.
+
+  # Redirect all traffic by default to the homeserver
+  location /_matrix {
+      proxy_read_timeout 60s;
+      proxy_set_header Host $host;
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_set_header X-Forwarded-For $remote_addr;
+      proxy_pass http://localhost:8008; # Point this towards your homeserver
+  }
+
+  # Redirect all media endpoints to the media-repo
+  location /_matrix/media {
+      proxy_read_timeout 60s;
+
+      # Make sure this matches your homeserver in media-repo.yaml
+      # You may have to manually specify it if using delegation or the
+      # incoming Host doesn't match.
+      proxy_set_header Host $host;
+
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_set_header X-Forwarded-For $remote_addr;
+      proxy_pass http://localhost:8000; # Point this towards media-repo
+  }
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="horizontal-scaling"><a class="header" href="#horizontal-scaling">Horizontal scaling</a></h1>
+<p>MMR's horizontal scaling is achieved through the <code>MACHINE_ID</code> environment variable. The default
+machine ID is <code>0</code>, and is responsible for running background tasks. Each deployed process <em>must</em>
+have a unique machine ID, otherwise upload conflict can occur. <code>MACHINE_ID</code> is a number between
+<code>0</code> and <code>1023</code>.</p>
+<p>The MMR processes communicate with each other over Redis. All deployed MMR instances <em>must</em> use
+the same configuration files, Redis servers, and database. Once running, traffic can be routed
+in whatever way makes sense for your use-case. For example, routing admin APIs to machine 0,
+uploads to machines 1-10, downloads and thumbnails to 11-20, and everything else to 21-25.</p>
+<p>It is typically recommended to at least move URL previews (<code>/_matrix/media/.*/preview_url</code>) to
+dedicated MMR instances. URL previews tend to have high traffic and short request times, leading
+to resource consumption.</p>
+<p>Thumbnails can additionally cause higher than average memory spikes due to image manipulation.
+Moving thumbnails to dedicated instances is recommended.</p>
+<p>As a general rule of thumb, for every 500 homeservers in a datacenter there should be 1 MMR
+instance. For example, if you have 1736 servers then there should be 4 MMR instances (3.472
+rounded up).</p>
+<p>If using file datastores, the directories must be kept in sync for all MMR instances. For
+example, if the logical MMR cluster is spread over 5 boxes, all 5 boxes will need to have
+the exact same directory contents. For this reason, it is strongly recommended to exclusively
+use S3 datastores when using horizontal scaling.</p>
+<h2 id="upgrades--high-availability"><a class="header" href="#upgrades--high-availability">Upgrades &amp; high availability</a></h2>
+<p>Typically in an environment where horizontal scaling is used there's also a desire for zero
+downtime. Typically, uploading large fleets of processes can be a challenge if uptime is a
+concern.</p>
+<p>Starting with v1.3.0, MMR can run side-by-side with different versions of itself, enabling
+rolling upgrades and high availability infrastructure.</p>
+<p>For a given version number <code>X.Y.Z</code>, the following applies:</p>
+<ul>
+<li>A change in <code>X</code> indicates a <em>breaking</em> change to MMR. The entire cluster <em>should</em> be brought
+offline to perform the upgrade. Check the upgrade notes for further guidance on zero-downtime
+upgrades to this version.</li>
+<li>A change in <code>Y</code> indicates a <em>large but backwards compatible</em> change to MMR. The cluster should
+be upgraded quickly, but does not need to be taken offline first.</li>
+<li>A change in <code>Z</code> indicates a <em>patch or otherwise small backwards compatible</em> change to MMR.
+The cluster can be upgraded more slowly, and does not need to be taken offline first.</li>
+</ul>
+<p><strong>In all cases, ensure machine ID <code>0</code> is upgraded &amp; restarted first.</strong> The remaining machines
+can be upgraded/restarted in any order.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="upgrading"><a class="header" href="#upgrading">Upgrading</a></h1>
+<p>Upgrading MMR is usually fairly easy: stop the existing process, replace the binaries/Docker
+image, and start it back up again.</p>
+<p>Some versions require mandatory configuration changes, or have other restrictions preventing
+such an easy upgrade. Check the notes in this section when upgrading to a listed version.</p>
+<p>A rolling changelog for MMR is available <a href="https://github.com/turt2live/matrix-media-repo/blob/master/CHANGELOG.md">here</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="upgrading-to-v130"><a class="header" href="#upgrading-to-v130">Upgrading to v1.3.0</a></h1>
+<h2 id="mandatory-configuration-change"><a class="header" href="#mandatory-configuration-change">Mandatory Configuration Change</a></h2>
+<p>Datastores are no longer managed by matrix-media-repo internally, meaning you MUST specify a datastore ID on each of your
+configured datastores. If you're setting up matrix-media-repo for the first time then you can use whatever you want for
+a datastore ID (though it's recommended to stick to alphanumeric strings). If you're <em>upgrading</em> to this version however,
+you will need to pull the datastore IDs out of the matrix-media-repo and add them to your configuration.</p>
+<p><strong>For safety, the datastores table is <em>not</em> deleted from the database in this upgrade. A future version may drop the table,
+however.</strong></p>
+<h3 id="getting-existing-datastore-ids"><a class="header" href="#getting-existing-datastore-ids">Getting existing datastore IDs</a></h3>
+<p><strong>Before upgrading</strong>, you can get your datastore IDs fairly easily. The best way might be to look at the startup log of
+your media repo:</p>
+<pre><code class="language-text">INFO[2023-05-21 20:58:45.116 Z] Datastores:
+INFO[2023-05-21 20:58:45.116 Z]         file (e9ce13bbb062383ce1bcee76414058668877f2d51635810652335374336): /mnt/mmr-store/location4
+INFO[2023-05-21 20:58:45.117 Z]         s3 (7669e2fb8ccaa0801e4255a417ad20884f76b8611659655069202644992): s3://redacted.r2.cloudflarestorage.com/redacted
+</code></pre>
+<p>This way, you're able to correlate locations to IDs. For example, the <code>file</code> datastore configured to put media at
+<code>/mnt/mmr-store/location4</code> has ID <code>e9ce13bbb062383ce1bcee76414058668877f2d51635810652335374336</code>. Add this as
+<code>id: &quot;e9ce13bbb062383ce1bcee76414058668877f2d51635810652335374336&quot;</code> in your media repo config file.</p>
+<p>Alternatively, you can use the admin API to get your datastores:</p>
+<pre><code class="language-text">curl -s -X GET -H &quot;Authorization: Bearer YOUR_ACCESS_TOKEN&quot; https://example.org/_matrix/media/unstable/admin/datastores
+{
+  &quot;e9ce13bbb062383ce1bcee76414058668877f2d51635810652335374336&quot;: {
+    &quot;type&quot;: &quot;file&quot;,
+    &quot;uri&quot;: &quot;/mnt/mmr-store/location4&quot;
+  },
+  &quot;7669e2fb8ccaa0801e4255a417ad20884f76b8611659655069202644992&quot;: {
+    &quot;type&quot;: &quot;s3&quot;,
+    &quot;uri&quot;: &quot;s3://redacted.r2.cloudflarestorage.com/redacted&quot;
+  }
+}
+</code></pre>
+<p>The returned object is keyed by ID over the API.</p>
+<p>In either case, take the ID and add it to the associated datastore in your config, similar to the following:</p>
+<pre><code class="language-yaml"># Your specific configuration may be different
+datastores:
+  - type: file
+    id: &quot;e9ce13bbb062383ce1bcee76414058668877f2d51635810652335374336&quot;  ## ADD THIS
+    #enabled: true   ## REMOVE THIS - use `forKinds: []` to disable a datastore
+    forKinds: [&quot;archives&quot;]
+    opts:
+      path: &quot;/mnt/mmr-store/location4&quot;
+  - type: s3
+    id: &quot;7669e2fb8ccaa0801e4255a417ad20884f76b8611659655069202644992&quot;  ## ADD THIS
+    #enabled: true   ## REMOVE THIS - use `forKinds: []` to disable a datastore
+    forKinds: [&quot;all&quot;]
+    opts:
+      ssl: true
+      tempPath: &quot;/mnt/mmr-store/s3-staging&quot;
+      endpoint: sfo2.digitaloceanspaces.com
+      accessKeyId: &quot;redacted&quot;
+      accessSecret: &quot;redacted&quot;
+      bucketName: &quot;redacted&quot;
+</code></pre>
+<p><strong>Note</strong>: If matrix-media-repo detects that a datastore ID is used but not referenced in the config then it will refuse
+to start.</p>
+<p>This new configuration style additionally allows for out-of-band datastore transfers. If you move all your data to a new
+path/server, for example, then you can simply update the path in the config for that datastore.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="configuration"><a class="header" href="#configuration">Configuration</a></h1>
+<p>The media repo has a fairly extensive configuration structure with support for live reloading,
+split configs, per-domain configs, and fine-grained control over individual features. This
+section covers the minimum for configuring a media repo and does not cover feature-specific areas
+of the config: those are left for other areas of this documentation.</p>
+<p>The sample configuration can be found <a href="https://github.com/turt2live/matrix-media-repo/blob/master/config.sample.yaml">on GitHub</a>.</p>
+<h2 id="basic-configuration"><a class="header" href="#basic-configuration">Basic configuration</a></h2>
+<p>The following is the minimum required information to make use of MMR:</p>
+<pre><code class="language-yaml">repo:
+    # Generally the bind address should be local as MMR should be behind a
+    # reverse proxy. If using Docker, set this to `0.0.0.0`.
+    bindAddress: '127.0.0.1'
+    port: 8000
+database:
+    # Currently only PostgreSQL is supported. This is *not* the same as your
+    # homeserver's database.
+    postgres: &quot;postgres://your_username:your_password@localhost/database_name?sslmode=require&quot;
+homeservers:
+    - name: example.org
+      csApi: &quot;https://example.org&quot;
+admins:
+    - &quot;@your_username:example.org&quot;
+datastores:
+    - type: file
+      id: &quot;my_file_datastore&quot;
+      forKinds: [&quot;all&quot;]
+      opts:
+        path: /data/media
+</code></pre>
+<p>For the <code>homeservers</code>, it's important to ensure that your server is correctly represented. The <code>name</code>
+<em>must</em> be the server name as it appears in your user ID. As mentioned in the deployment documentation,
+this will be what the media repo expects as a <code>Host</code> header too. The <code>csApi</code> is the URL for where the
+media repo can reach the homeserver for some tasks. Usually this will be the same URL used to
+configure Matrix clients, though it can be internally routed if needed.</p>
+<p>At least one datastore needs to be supplied and enabled. More information about the datastores can be
+found in a later section.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="datastores"><a class="header" href="#datastores">Datastores</a></h1>
+<p>Datastores are where the media repo puts content for later usage. All uploads, thumbnails, remote
+media, URL preview images, etc are stored in a datastore and recorded in the database. On most
+deployments these datastores can get to be hundreds of gigabytes in size, with the largest deployments
+seeing in excess of 10TB worth of data, even with de-duplication offered by the media repo.</p>
+<p>The two main supported datastores are currently <code>file</code> and <code>s3</code>.</p>
+<p>Each datastore can have a number of &quot;kinds&quot; associated with it to ensure that specific types of
+content gets put in that location. The media repo de-duplicates across all datastores, and the first
+encounter for a piece of content will determine which datastore it ends up in. The kinds are specified
+through the <code>forKinds</code> option in the config, which can have the following values:</p>
+<ul>
+<li><code>all</code> - The datastore can handle all of the following kinds of content.</li>
+<li><code>thumbnails</code> - The datastore will be responsible for handling thumbnails.</li>
+<li><code>local_media</code> - The datastore will house uploads from users on the configured homeservers.</li>
+<li><code>remote_media</code> - The datastore will contain content from other homeservers.</li>
+<li><code>archives</code> - The datastore will handle archives (see the GDPR section for more information).</li>
+</ul>
+<p>When multiple datastores are available for a certain kind of media, the media repo will pick the
+datastore with the smallest size first to try and balance them out. It is recommended to have a
+single datastore be responsible for a single kind of media.</p>
+<p>It is valid to have a datastore responsible for no kinds of media for cold storage purposes. See
+&quot;datastore management&quot; in this documentation for more information.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="file-based"><a class="header" href="#file-based">File-based</a></h1>
+<p>File-based datastores use a directory on the host running the media repo to house content. These
+kinds of datastores are usually best for temporary storage or for frequently requested content. In
+Docker environments, it is highly not advised to use this datastore type due to the requirement of
+having to map volumes, which many use cases for the media repo Docker image will find impossible
+or unmanagable.</p>
+<p>When using a file-based datastore, it is recommended to use higher performance disks due to frequent
+reads and writes.</p>
+<p>The configuration for a file-based datastore is as follows:</p>
+<pre><code class="language-yaml">datastores:
+  - type: file
+    id: &quot;my_file_datastore&quot;
+    forKinds: [&quot;all&quot;]
+    opts:
+      path: /var/matrix/media
+</code></pre>
+<p>The <code>path</code> is simply where the media will be placed. If the <code>path</code> changes, be sure to keep the
+<code>id</code> the same so MMR knows where to access it.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="s3"><a class="header" href="#s3">S3</a></h1>
+<p>The S3 datastore is the most recommended datastore method as it allows for large amounts of data
+to be stored without having to tie the host down to particular disks.</p>
+<p>Currently the datastore is tested and validated to work with the following S3-like providers:</p>
+<ul>
+<li>Amazon AWS S3</li>
+<li>DigitalOcean Spaces</li>
+<li>MinIO</li>
+<li>Scaleway</li>
+</ul>
+<p>A configuration for an S3 datastore would be:</p>
+<pre><code class="language-yaml">datastores:
+  - type: s3
+    id: &quot;my_s3_datastore&quot;
+    forKinds: [&quot;all&quot;]
+    opts:
+      tempPath: &quot;/tmp/mediarepo_s3_upload&quot;
+      endpoint: sfo2.digitaloceanspaces.com
+      accessKeyId: &quot;&quot;
+      accessSecret: &quot;&quot;
+      ssl: true
+      bucketName: &quot;your-media-bucket&quot;
+      region: &quot;sfo2&quot;
+</code></pre>
+<p>Normally, the <code>region</code> is not needed and can be commented out for most providers. Some providers, like
+Scaleway, require a <code>region</code> to be set, however.</p>
+<p>The <code>tempPath</code> is to reduce memory usage in the media repo: the underlying library used for S3
+handling causes large memory usage for small files when the size is unknown, so the media repo dumps
+the file to disk to get an accurate reading on the file size before sending it to S3. If memory usage
+isn't a concern, set <code>tempPath</code> to an empty string. When using Docker it is acceptable (and
+recommended) to leave this within the container - it does not need a volume to be mapped.</p>
+<p>The remaining settings should all be supplied by the S3 provider, though the names of things might be
+slightly different. For example, <code>accessKeyId</code> might just be an &quot;access key&quot; or simply &quot;key ID&quot;.</p>
+<h2 id="supported-providers"><a class="header" href="#supported-providers">Supported providers</a></h2>
+<p>MMR is validated to work with the following S3 providers. Others may work, however support is
+limited for anything not listed below.</p>
+<ul>
+<li><a href="https://aws.amazon.com/s3/">Amazon S3</a></li>
+<li><a href="https://min.io/">MinIO</a></li>
+<li><a href="https://www.digitalocean.com/products/spaces">DigitalOcean Spaces</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="split-configsper-domain"><a class="header" href="#split-configsper-domain">Split configs/per-domain</a></h1>
+<p>The media repo can be pointed to a directory with several configuration files in it to allow
+for split configurations. This is useful as a layering mechanism as well as being able to
+supply per-domain configs in more complicated environments.</p>
+<p>The configuration directory can be specified using <code>-config /path/to/config/dir</code> for the binaries
+and through the <code>REPO_CONFIG</code> environment variable in Docker. All files will be automatically watched
+for changes to live-reload them.</p>
+<h2 id="structure"><a class="header" href="#structure">Structure</a></h2>
+<p>Configuration directories are shallow and do not recurse - put all your files in a single directory
+and do not nest them into further directories. The order the files are read is alphabetical, and so
+it is recommended to prefix the files with a number for predictable ordering.</p>
+<p>Files override each other unless they are indicated as a per-domain config (see below). The media
+repo will always start with a default configuration then apply all the configuration files one by
+one over top of that, leading to the final configuration it will use.</p>
+<h2 id="per-domain-configs"><a class="header" href="#per-domain-configs">Per-domain configs</a></h2>
+<p>Per-domain configs allow for more fine-tuned control over options for each individual homeserver.
+Usually this will be most utilized by hosting providers which offer product packages for fewer
+restrictions or more features.</p>
+<p>When using per-domain configs, the <code>homeservers</code> field of the main config can be safely ignored -
+the media repo will determine what needs to be there based on the per-domain configs it sees.</p>
+<p>A per-domain config must have a <code>homeserver</code> field set to identify it as different from the main
+config. An example minimal configuration would be:</p>
+<pre><code class="language-yaml">homeserver: example.org
+csApi: &quot;https://example.org&quot;
+backoffAt: 10
+adminApiKind: &quot;matrix&quot;
+</code></pre>
+<p>Note that <code>csApi</code>, <code>backoffAt</code>, and <code>adminApiKind</code> are all the same options that would be found
+in the <code>homeservers</code> field of the main config.</p>
+<p>Any option not in the following list can be specified in the per-domain config to change the setting
+for just that domain:</p>
+<ul>
+<li><code>homeservers</code> - because why would you.</li>
+<li><code>database</code> - because the database is for the whole process.</li>
+<li><code>repo</code> - because the listener configuration is for the whole process.</li>
+<li><code>sharedSecretAuth</code> - because the option doesn't apply to a particular domain.</li>
+<li><code>rateLimit</code> - because this configuration is applied before the host is known.</li>
+<li><code>metrics</code> - because this affects the whole process.</li>
+<li><code>admins</code> - because admins are repo-wide.</li>
+<li><code>downloads.cache</code> - because the cache is repo-wide.</li>
+<li><code>downloads.numWorkers</code> - because workers are configured repo-wide.</li>
+<li><code>urlPreviews.numWorkers</code> - because workers are configured repo-wide.</li>
+<li><code>thumbnails.numWorkers</code> - because workers are configured repo-wide.</li>
+<li><code>federation</code> - because the federation options are repo-wide.</li>
+<li><code>downloads.expireAfterDays</code> - because remote media downloads are not for any particular domain.</li>
+<li><code>thumbnails.expireAfterDays</code> - because thumbnails aren't associated with any particular domain.</li>
+<li><code>urlPreviews.expireAfterDays</code> - because previews aren't associated with any particular domain.</li>
+<li><code>redis</code> - because the cache is repo-wide.</li>
+</ul>
+<p>An example configuration structure could be:</p>
+<p><code>01-main.yaml</code>:</p>
+<pre><code class="language-yaml">repo:
+    bindAddress: 127.0.0.1
+    port: 8000
+identicons:
+    enabled: false
+# ... and other options
+</code></pre>
+<p><code>example.org.yaml</code>:</p>
+<pre><code class="language-yaml">homeserver: example.org
+identicons:
+    enabled: true
+</code></pre>
+<p>In this example, the default for all homeservers is to have identicons disabled while for
+<code>example.org</code> they will be enabled.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="calculating-memory-requirements"><a class="header" href="#calculating-memory-requirements">Calculating memory requirements</a></h1>
+<p>Memory can be difficult to calculate or predict for the media repo due to the number of things
+it does. For most deployments, starting with 1-2GB and adjusting as needed will get a good idea
+for how much memory will be used.</p>
+<p>A formula to get the approximate memory usage would be:</p>
+<pre><code class="language-text">75mb
++ (thumbnails.maxSourceBytes * 2)
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="calculating-storage-requirements"><a class="header" href="#calculating-storage-requirements">Calculating storage requirements</a></h1>
+<p>Regardless of the datastore chosen, the content will take up space. The actual number can be hard
+to calculate due to fluctations in usage patterns and a number of unknowns, however this section
+should give some general guidance on where to start planning.</p>
+<p>The first thing to determine is the kind of media most users on your server will be uploading and/or
+consuming. Screenshots tend to be in the 500kb - 1mb range while photos tend to be 4-12mb. Avatars
+for users tend to be either photos or highly cropped images under 1mb in size.</p>
+<p>Once the kind of media is determined, the next step is to figure out a frequency: most communities
+will be surrounded by sharing some photos in a week and many screenshots a day. Taking the frequency
+and multiplying it by the average anticipated file size from the previous step will result in an
+optimistic number for storage requirements. Multiplying that number by two will get a pessimistic
+estimate.</p>
+<p>A typical user will encounter 10-20mb worth of new media each day. Assuming most of this can be
+de-duplicated or cached, the following estimations can be made:</p>
+<table><thead><tr><th>Monthly active users</th><th>Raw storage per month</th><th>De-duplicated storage per month</th></tr></thead><tbody>
+<tr><td>&lt;500</td><td>150 - 300 GB</td><td>60 - 120 GB</td></tr>
+<tr><td>2000</td><td>600 - 1200 GB</td><td>240 - 480 GB</td></tr>
+<tr><td>5000</td><td>1.5 - 3 TB</td><td>0.6 - 1.2 TB</td></tr>
+<tr><td>10,000</td><td>3 - 6 TB</td><td>1.2 - 2.4 TB</td></tr>
+<tr><td>120,000</td><td>36 - 72 TB</td><td>14.4 - 28.8 TB</td></tr>
+</tbody></table>
+<p><strong>Note</strong>: Exact growth is something you'll have to monitor for and manage. This is provided as a guide
+only for the purposes of getting started with the media repo.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="general-configuration"><a class="header" href="#general-configuration">General configuration</a></h1>
+<p>Most major features of the media repo have their own dedicated sections, however some are generic
+enough to be placed here.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="logging"><a class="header" href="#logging">Logging</a></h1>
+<p>The media repo will always output to stdout regardless of configuration settings. For Docker
+this means the built-in Docker logging can be relied upon.</p>
+<p>The media repo can also output to a file that rotates daily and keeps the last 14 days. Here's
+the configuration for that:</p>
+<pre><code class="language-yaml">repo:
+    logDirectory: &quot;./logs&quot;
+</code></pre>
+<p>By specifying <code>&quot;-&quot;</code> (including quotes) as the <code>logDirectory</code>, the media repo will only output to
+stdout.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="forwarded-addresses"><a class="header" href="#forwarded-addresses">Forwarded addresses</a></h1>
+<p>Some environments need to control how the <code>X-Forwarded-*</code> headers are handled by the media repo. By
+default, the media repo validates and expects an <code>X-Forwarded-For</code> and <code>X-Forwarded-Host</code> header from
+the reverse proxy, though this can be disabled with the options below.</p>
+<p>Configuration:</p>
+<pre><code class="language-yaml">repo:
+    trustAnyForwardedAddress: false
+    useForwardedHost: true
+</code></pre>
+<p>To disable all handling of <code>X-Forwarded-Host</code>, set <code>useForwardedHost</code> to <code>false</code>. Note this might be
+required when using the Kubernetes nginx ingress controller, per issue <a href="https://github.com/turt2live/matrix-media-repo/issues/202">#202</a>.</p>
+<p>To disable validation of the <code>X-Forwarded-For</code> header, accepting the value verbatim, set
+<code>trustAnyForwardedAddress</code> to <code>true</code>. This is typically useful in scenarios where the clients being
+proxied are on a private network which the media repo might ignore as potentially invalid.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="federation"><a class="header" href="#federation">Federation</a></h1>
+<p>The media repo does federated API calls to get remote media, though doesn't have many options
+to configure this behaviour. In general, to control outbound federation on the media repo, use a
+custom DNS server or prevent inputs to the media repo that would cause outbound federation.</p>
+<p>Configuration:</p>
+<pre><code class="language-yaml">federation:
+    backoffAt: 20
+</code></pre>
+<p>The <code>backoffAt</code> setting controls how many consecutive failures it takes for the media repo to stop
+calling the homeserver for a short time. Note that 404 errors are not considered a failure.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="database-pool"><a class="header" href="#database-pool">Database pool</a></h1>
+<p>For most environments the default connection pool will be okay, however larger deployments may
+wish to change the database pool size. The configuration for that is as follows:</p>
+<pre><code class="language-yaml">database:
+    pool:
+        maxConnections: 25
+        maxIdleConnections: 5
+</code></pre>
+<p>The <code>maxConnections</code> limits the media repo's total connections, while <code>maxIdleConnections</code> is the
+maximum number of connections it'll hold open when it isn't doing anything.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="timeouts"><a class="header" href="#timeouts">Timeouts</a></h1>
+<p>The media repo has various configurable timeouts which can be specified in the config:</p>
+<pre><code class="language-yaml">timeouts:
+    urlPreviewTimeoutSeconds: 10
+    federationTimeoutSeconds: 120
+    clientServerTimeoutSeconds: 30
+</code></pre>
+<p>Each is the maximum amount of time the media repo should spend waiting for resources to be
+fetched. Note that federation is primarily used to download media.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="uploads"><a class="header" href="#uploads">Uploads</a></h1>
+<p>Uploads for the media repo get processed through a number of stages, which include buffering
+them into memory for processing. This can cause high memory usage if not carefully managed.</p>
+<p>The configuration for uploads is:</p>
+<pre><code class="language-yaml">uploads:
+    maxBytes: 104857600 # 100MB default, 0 to disable
+    reportedMaxBytes: 104857600
+    minBytes: 100
+</code></pre>
+<p>The <code>maxBytes</code> control the maximum size being uploaded, with zero disabling the limitation (not
+recommended). <code>reportedMaxBytes</code>, if supplied, will be used to inform the user of the maximum file
+size they can upload. Typically the <code>reportedMaxBytes</code> option is not needed outside of rare
+circumstances. When <code>reportedMaxBytes</code> is zero (the default), it'll use <code>maxBytes</code>. When it is <code>-1</code>,
+it will indicate that there is no limit to users.</p>
+<p><code>minBytes</code> is a minimum size users must upload for the media repo to make it worthwhile processing
+the upload. The media repo has to spend time and energy processing and storing each file, and small
+files often cost more to process/store than it is worth. 100 bytes (the default) is an approximate
+break-even point for balancing cost vs minimum file size.</p>
+<h2 id="reverse-proxies"><a class="header" href="#reverse-proxies">Reverse proxies</a></h2>
+<p>Often reverse proxies will impose maximum client request sizes which may be different from the maximum
+allowable bytes in your config. Check your reverse proxy's configuration to ensure that it will not
+be imposing an artificially small limit on your users.</p>
+<p>If your environment is intentionally set up to disallow large file uploads from your users, but have
+a higher limit internal to your network, use the <code>reportedMaxBytes</code> option to report the reverse
+proxy's limit.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="downloads-remote-media"><a class="header" href="#downloads-remote-media">Downloads (remote media)</a></h1>
+<p>Remote media is any media offered by a homeserver that isn't controlled by the media repo
+instance. For example, if your media repo config lists <code>hs1.example.org</code> and <code>hs2.example.org</code>,
+then <code>other-hs.example.org</code> will be considered remote.</p>
+<p>The following configuration can be used to control remote media downloads:</p>
+<pre><code class="language-yaml">downloads:
+  maxBytes: 104857600 # 100MB default, 0 to disable
+  numWorkers: 10
+  failureCacheMinutes: 5
+  expireAfterDays: 0
+</code></pre>
+<p>The <code>maxBytes</code> value ensures that large remote media is not fetched. Normally this is set to the
+same value as your upload limit for consistency.</p>
+<p><code>numWorkers</code> is the number of concurrent requests for external media to handle at a time. The media
+repo already de-duplicates requests for the same media, though requests spanning multiple servers
+or media IDs can still be made. Requests are queued if they cannot be processed concurrently. It
+is recommended to increase this if you're having troubles downloading remote media, or if you're
+having issues with memory usage.</p>
+<p>Sometimes servers fail to respond (500 errors, offline, etc) and the media repo will cache failures
+for a short while on particular media to give the remote server some breathing room. This breathing
+room can be changed with <code>failureCacheMinutes</code>.</p>
+<p>Remote media is often not used after a week or two of being downloaded, and can be purged with the
+<code>expireAfterDays</code> option. If a client re-requests the media, it will be downloaded again.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="thumbnails"><a class="header" href="#thumbnails">Thumbnails</a></h1>
+<p>Thumbnails are requested by most clients to ensure that things like images can be shown at a smaller
+size than the full media. Thumbnails have a large memory and CPU requirement and are the most
+requested resource of the media repo.</p>
+<p>The full configuration for thumbnails is:</p>
+<pre><code class="language-yaml">thumbnails:
+  maxSourceBytes: 10485760 # 10MB default, 0 to disable
+  numWorkers: 100
+  expireAfterDays: 0
+  sizes:
+    - width: 32
+      height: 32
+    - width: 96
+      height: 96
+    - width: 320
+      height: 240
+    - width: 640
+      height: 480
+    - width: 800
+      height: 600
+  dynamicSizing: false
+  allowAnimated: true
+  defaultAnimated: false
+  maxAnimateSizeBytes: 10485760 # 10MB default, 0 to disable
+  stillFrame: 0.5
+  types:
+    - &quot;image/jpeg&quot;
+    - &quot;image/jpg&quot;
+    - &quot;image/png&quot;
+    - &quot;image/gif&quot;
+    - &quot;image/heif&quot;
+    - &quot;image/webp&quot;
+    #- &quot;image/jxl&quot; # Be sure to have ImageMagick installed to thumbnail JPEG XL files
+    #- &quot;image/svg+xml&quot; # Be sure to have ImageMagick installed to thumbnail SVG files
+</code></pre>
+<p>Many of these options are described in later sections.</p>
+<p><code>maxSourceBytes</code> controls how big of media is allowed to be thumbnailed. Typically the memory
+usage for a thumbnail will be at worse 1.5x this value, multipled by <code>numWorkers</code> (the number of
+thumbnails to generate concurrently). To avoid exhausting the server of memory, it is recommended to
+keep this at roughly 1/10th the maximum upload size, though specific use cases may call for less or
+more.</p>
+<p><code>numWorkers</code>, as mentioned, is the number of concurrent thumbnails to process. The media repo will
+queue up thumbnails which need to be generated, though with thumbnails being the most highly requested
+resource it is important to ensure there is enough room to process those thumbnails. Once a thumbnail
+is generated, it is stored in the media repo so it does not need to be re-generated again.</p>
+<p>Approximately 2 weeks after a thumbnail has been generated, clients are unlikely to request a
+thumbnail again. To save space, <code>expireAfterDays</code> can be set to clean up thumbnails which have been
+previously generated. If a client re-requests a thumbnail, it will be regenerated.</p>
+<h2 id="thumbnail-sizes--dynamic-sizing"><a class="header" href="#thumbnail-sizes--dynamic-sizing">Thumbnail sizes &amp; dynamic sizing</a></h2>
+<p>The <code>sizes</code> control which buckets to fit thumbnails into. The Matrix specification allows the media
+repo to return a <em>larger</em> thumbnail than the client requested, or a maximum size if no larger size
+is available. As such, the media repo will return a thumbnail exactly matching one of these sizes
+depending on the request from the client. The most common size requests are shown above.</p>
+<p>For more pixel-perfect thumbnails that aren't potentially blurry in clients, set <code>dynamicSizing: true</code>
+to ignore the <code>sizes</code> list and instead generate a thumbnail for the exact size the client requested.
+This will lead to significantly more thumbnails being generated, which means higher storage
+requirements and higher resource requirements (typically).</p>
+<h2 id="animated-thumbnails"><a class="header" href="#animated-thumbnails">Animated thumbnails</a></h2>
+<p>Thumbnails by default are static images which are resized and cropped to the appropriate dimensions.
+Some image formats, like GIFs, can sometimes be better as animated thumbnails instead of a static
+image.</p>
+<p>For non-animated thumbnails on animated file types (like GIFs), the <code>stillFrame</code> option chooses where
+in the file's duration to generate a thumbnail from. By default this is <code>0.5</code> to use an image from the
+middle in order to handle GIFs which would appear as a transparent frame if picked from the start.</p>
+<p>Animated thumbnails can be entirely turned off using <code>allowAnimated</code>, forcing the media repo to use
+the <code>stillFrame</code> option for all animated media types.</p>
+<p>Animated thumbnails can be requested by clients, though many do not support this custom flag on the
+media repo. To change the behaviour to turn on animations by default, set <code>defaultAnimated: true</code>.</p>
+<p>Animated thumbnails can be much more resource intensive to handle than regular thumbnails, and as
+such the source material can be limited with <code>maxAnimateSizeBytes</code>. This option only applies when
+the media repo is generating an animated thumbnail. It is recommended to keep this value fairly
+small to avoid letting resource usage exceed expectations.</p>
+<h2 id="thumbnail-types"><a class="header" href="#thumbnail-types">Thumbnail types</a></h2>
+<p>The <code>types</code> controls which mimetypes of media the media repo should try to thumbnail. The media
+repo supports the mimetypes listed in the sample config, with more being possible in the future.</p>
+<p><strong>Note</strong>: <code>image/svg+xml</code> requires <a href="https://imagemagick.org/index.php">ImageMagick</a> to be available
+to the media repo. The Docker image contains the appropriate binaries for this to happen.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="identicons"><a class="header" href="#identicons">Identicons</a></h1>
+<p>Identicons are generated avatars for a given hash. Some legacy clients use this endpoint
+to supply a default avatar to users, though it is not very common.</p>
+<p>There is only one option for identicons - whether or not to use them:</p>
+<pre><code class="language-yaml">identicons:
+    enabled: true
+</code></pre>
+<p>The resource requirements for having identicons enabled are minimal. An example of an identicon
+for &quot;matrix-bot&quot; is:</p>
+<p><img src="identicons/../img/media-repo-identicon-matrix-bot.png" alt="matrix-bot-identicon" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="url-previews"><a class="header" href="#url-previews">URL previews</a></h1>
+<p>Clients looking to assist users by showing the contents of a URL will often rely on the server
+to generate a preview to avoid exposing the user's IP to the service. The media repo can have
+URL previews disabled (usually resulting in previews not being shown to users), though it is
+recommended to have them enabled for the best user experience.</p>
+<p>The media repo uses OpenGraph and its own built-in page scraping to generate previews, though
+other methods can be enabled (see later documentation).</p>
+<p>The configuration for URL previews is as follows:</p>
+<pre><code class="language-yaml">urlPreviews:
+  enabled: true
+  numWorkers: 10
+  maxPageSizeBytes: 10485760 # 10MB default, 0 to disable
+  filePreviewTypes:
+    - &quot;image/*&quot;
+  defaultLanguage: &quot;en-US,en&quot;
+  numWords: 50
+  maxLength: 200
+  numTitleWords: 30
+  maxTitleLength: 150
+  expireAfterDays: 0
+</code></pre>
+<p>Like downloads and thumbnails, URL previews have a worker system to process multiple concurrent
+requests for previews. The number of active workers can be controlled with <code>numWorkers</code>. By default
+this is 10, though larger deployments may wish to consider setting this to a number in the hundreds
+to ensure there is enough availability to process previews quickly.</p>
+<p>Also like thumbnails, URL previews can have a significant drain on resources. To help minimize the
+impact, change <code>maxPageSizeBytes</code> to limit how much of a page the media repo will try and preview.</p>
+<p>The <code>filePreviewTypes</code> are the mimetypes the media repo will try to thumbnail if it encounters them
+during the preview generation process. This is usually thumbnailed and shown alongside the other
+information in the preview.</p>
+<p><code>defaultLanguage</code> can be used as teh default language to send to the remote server when the client
+doesn't send an <code>Accept-Language</code> header to the media repo.</p>
+<p>Previews are limited by a number of words first, then limited to a number of characters (which may
+involve taking a few words off the end). This is to try and give a sensible preview of what the
+page describes without generating previews with a large amount of text. The title for the preview
+can be controlled with <code>numTitleWords</code> and <code>maxTitleLength</code> whereas the description (body) can be
+controlled with <code>numWords</code> and <code>maxLength</code>.</p>
+<p>URL previews are often not used after a couple days and can be safely purged with <code>expireAfterDays</code>.
+If a client re-requests a preview, it will be regenerated.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="security"><a class="header" href="#security">Security</a></h1>
+<p>URL previews can expose internal parts of your network to outsiders with specially formatted
+requests. To avoid leaking data about your infrastructure, it is incredibly important to
+ensure the allowable networks are configured:</p>
+<pre><code class="language-yaml">urlPreviews:
+  previewUnsafeCertificates: false
+  disallowedNetworks:
+    - &quot;127.0.0.1/8&quot;
+    - &quot;10.0.0.0/8&quot;
+    - &quot;172.16.0.0/12&quot;
+    - &quot;192.168.0.0/16&quot;
+    - &quot;100.64.0.0/10&quot;
+    - &quot;169.254.0.0/16&quot;
+    - '::1/128'
+    - 'fe80::/64'
+    - 'fc00::/7'
+  allowedNetworks:
+    - &quot;0.0.0.0/0&quot;
+</code></pre>
+<p>One or both of <code>disallowedNetworks</code> and <code>allowedNetworks</code> must be supplied, otherwise the media
+repo will refuse to generate previews. Both options are list of CIDR ranges.</p>
+<p>The media repo will first check <code>allowedNetworks</code> to see if the network is allowable. By default
+this is as shown above (<code>0.0.0.0/0</code>) to allow all networks to be previewed and limited by the
+disallowed networks list.</p>
+<p>If a network is allowed by the <code>allowedNetworks</code>, the media repo will then check against the
+<code>disallowedNetworks</code> list to ensure the request is still safe to go through to previewing. This
+is usually where private networks are specified, like in the example.</p>
+<p>In some rare circumstances, the certificates of the sites being previewed might not be traditionally
+signed or secure. If this is the case for your environment, set <code>previewUnsafeCertificates: true</code>
+to disable certificate checks on previews.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="oembed"><a class="header" href="#oembed">oEmbed</a></h1>
+<p>oEmbed is another form of previewing a URL which requires talking to a provider. By default the
+media repo has oEmbed previews disabled for privacy concerns, however this can be changed with
+the following configuration:</p>
+<pre><code class="language-yaml">urlPreviews:
+  oEmbed: true
+</code></pre>
+<p>The media repo ships with <a href="https://oembed.com/providers.json">oEmbed's official providers</a> list
+bundled in and will use that if an alternative <code>providers.json</code> is not specified. The
+<code>providers.json</code> is considered an &quot;asset&quot; for the media repo, and can be changed by specifying an
+asset path as a command line flag.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="cache"><a class="header" href="#cache">Cache</a></h1>
+<p>The media repo caches media for faster access on frequently requested media. Only one cache mechanism
+can be used at a time.</p>
+<h2 id="redis"><a class="header" href="#redis">Redis</a></h2>
+<p>Redis can be used as a high-performance cache for the media repo, allowing for (in future) multiple
+media repositories to run concurrently in limited jobs (such as some processes handling uploads,
+others downloads, etc). Currently though, it is capable of speeding up deployments of disjointed
+media repos or in preparation for proper load balancer support by the media repo.</p>
+<p>The media repo connects to a number of &quot;shards&quot; (Redis processes) to distribute cached keys over
+them. Each shard is not expected to store persistent data and should be tolerant of total failure -
+the media repo assumes that the shards will be dedicated to caching and thus will not have any
+expectations that a particular shard will remain running.</p>
+<p>Setting up a shard is fairly simple: it's the same as deploying Redis itself. The media repo does not
+manage the expiration policy for the shards, so it is recommended to give
+<a href="https://redis.io/topics/lru-cache">the Redis docs</a> a read to pick the best eviction policy for your
+environment. The current recommendations are:</p>
+<ul>
+<li>A <code>maxmemory</code> of at least <code>1gb</code> for each shard.</li>
+<li>A <code>maxmemory-policy</code> of <code>allkeys-lfu</code> to ensure that the cache gets cleared out (the media repo
+does not set an expiration time or TTL). Note: an <code>lru</code> mode is <em>not</em> recommended as the media repo
+will be caching all uploads it sees, which includes remote media. A <code>lfu</code> mode ensures that recent
+items being cached can still be evicted if not commonly requested.</li>
+<li>1 shard for most deployments. Larger repos (or connecting many media repos to the same shards)
+should consider 3 or more shards.</li>
+</ul>
+<p>The shards in the ring can be changed at runtime by updating the config and ensuring the media repo
+has reloaded the config. Note that changing cache mechanisms at runtime is not recommended, and a
+full restart is recommended instead.</p>
+<p><strong>Note</strong>: Metrics reported for cache size will be inaccurate. Frequencies of requests will still be
+reported.</p>
+<p><strong>Note</strong>: Quarantined media will still be stored in the cache. This is considered a bug and will need
+fixing.</p>
+<h2 id="connecting-multiple-disjointed-media-repos-hosting-providers"><a class="header" href="#connecting-multiple-disjointed-media-repos-hosting-providers">Connecting multiple disjointed media repos (hosting providers)</a></h2>
+<p>Though the media repo expects to be the sole and only thing in the datacenter handling media, it is
+not always possible or sane to do so. Examples including hosting providers which may have several
+media repos handling a small subset of domains each. In these scenarios, it may be beneficial to set
+up a series of Redis shards within each datacenter and connect all the media repos in that DC to
+them. This can reduce the amount of time it takes to retrieve media from a media repo in that DC, as
+well as avoid downloading several copies of remote media.</p>
+<p>Note that even when connecting media repos to the same set of shards the repos will still attempt to
+upload a copy of the media to the datastore. For example, if media repo A downloads something from
+matrix.org and puts it into the cache, media repo B will first get it from the cache and upload it to
+its datastore when a user  requests the same media. The benefit, however, is that only 1 request to
+matrix.org happened instead of two.</p>
+<p>All media repos should be connected to the same set of shards to ensure even balancing between the
+shards. Additionally, all media repos <strong>must</strong> be running the same major version (anything in
+<code>1.x.x</code>) in order to avoid conflicts.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="metrics"><a class="header" href="#metrics">Metrics</a></h1>
+<p>The media repo can export metrics for consumption by Prometheus. The metrics listen on a distinct
+interface to avoid having metrics exposed publicly, and thus the <code>port</code> cannot be the same port
+for the general media repo usage.</p>
+<p>The full configuration is:</p>
+<pre><code class="language-yaml">metrics:
+  enabled: false
+  bindAddress: &quot;127.0.0.1&quot;
+  port: 9000
+</code></pre>
+<p>An example Grafana dashboard is available
+<a href="https://github.com/turt2live/matrix-media-repo/blob/master/docs/grafana.json">on GitHub</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="shared-secret-authentication"><a class="header" href="#shared-secret-authentication">Shared secret authentication</a></h1>
+<p>Typically used by hosting providers, shared secret authentication can be optionally enabled to
+make requests as a media repo administrator without needing an account on any of the configured
+homeservers. Some requests do still require an administrator on a configured homeserver, however
+most of the Admin API can be used by shared secret users.</p>
+<p>The full configuration for shared secret authentication (disabled by default) is:</p>
+<pre><code class="language-yaml">sharedSecretAuth:
+  enabled: false
+  token: &quot;PutSomeRandomSecureValueHere&quot;
+</code></pre>
+<p>It is strongly recommended to use a secure random value for <code>token</code> to prevent unauthorized access
+to the media repo.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="access-token-cache"><a class="header" href="#access-token-cache">Access token cache</a></h1>
+<p>The media repo verifies who is uploading a piece of media by calling the <code>/account/whoami</code> endpoint
+on the homeserver over the client-server API. This can cause significant load on the homeserver if
+not cached.</p>
+<p>The full configuration for the access token cache is:</p>
+<pre><code class="language-yaml">accessTokens:
+  maxCacheTimeSeconds: 0
+  useLocalAppserviceConfig: false
+  appservices:
+    - id: Name_of_appservice_for_your_reference
+      asToken: Secret_token_for_appservices_to_use
+      senderUserId: &quot;@_example_bridge:yourdomain.com&quot;
+      userNamespaces:
+        - regex: &quot;@_example_bridge_.+:yourdomain.com&quot;
+</code></pre>
+<p>The access token cache is disabled by default, however if enabled it is strongly recommended to
+proxy the <code>/logout</code> and <code>/logout/all</code> endpoints through to the media repo. They'll be proxied through
+to the homeserver and update the cache internally. Without this, a smaller <code>maxCacheTimeSeconds</code> is
+recommended. If the endpoints are being proxied, a <code>maxCacheTimeSeconds</code> of <code>43200</code> (12 hours) will
+be suitable for most applications.</p>
+<p>To enable the access token cache, set <code>maxCacheTimeSeconds</code> to a non-zero value.</p>
+<p>Application services (bridges, normally) can be made even more efficient for the media repo by
+registering some minimal information with the media repo. When <code>useLocalAppserviceConfig</code> is <code>true</code>,
+the media repo will accept requests which would be valid under the <code>appservices</code> list without
+verifying with the homeserver, leading to fewer requests though increasing the risk of media being
+uploaded for users which do not exist. It's important to only use this option with a trustworthy
+bridge/appservice as otherwise the media repo could become an abuse vector.</p>
+<p>Each appservice has an <code>id</code> which is only used for your reference in the logs/API - this can be
+set to anything that makes sense to you, such as <code>telegram</code> or <code>discord</code> for the respective bridges.
+The <code>asToken</code> should be copied directly from the appservice's registration. The <code>senderUserId</code> is
+a combination of the <code>sender_localpart</code> from the registration and the homeserver's domain name. The
+media repo only needs to know about the <code>user</code> namespaces, and only the regular expressions contained
+within.</p>
+<p><strong>Note</strong>: If the appservice generated a user namespace for <code>@_example.*</code> (ie: no domain restriction)
+then it is important to add one. For example: <code>@_example.+:homeserver.example.org</code>. Without a domain
+restriction in the regular expression anyone who matches the prefix could upload media from any
+homeserver if they had the right <code>asToken</code>.</p>
+<p><strong>Note</strong>: If using the appservice feature, it's <em>strongly</em> recommended to only configure the
+<code>appservices</code> in per-domain configs to ensure that appservices for one homeserver are not configured
+for all homeservers.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="imports-exports-and-archiving"><a class="header" href="#imports-exports-and-archiving">Imports, exports, and archiving</a></h1>
+<p><strong>TODO</strong>: Actually write docs.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="exports"><a class="header" href="#exports">Exports</a></h1>
+<p><strong>TODO</strong>: Actually write docs.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="gdpr"><a class="header" href="#gdpr">GDPR</a></h1>
+<p><strong>TODO</strong>: Actually write docs.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="imports"><a class="header" href="#imports">Imports</a></h1>
+<p><strong>TODO</strong>: Actually write docs.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="from-synapse"><a class="header" href="#from-synapse">From Synapse</a></h1>
+<p><strong>TODO</strong>: Actually write docs.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="from-export"><a class="header" href="#from-export">From Export</a></h1>
+<p><strong>TODO</strong>: Actually write docs.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="quotas"><a class="header" href="#quotas">Quotas</a></h1>
+<p><strong>TODO</strong>: Actually write docs.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="rate-limiting"><a class="header" href="#rate-limiting">Rate limiting</a></h1>
+<p><strong>TODO</strong>: Actually write docs.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="quarantine--abuse-mitigation"><a class="header" href="#quarantine--abuse-mitigation">Quarantine / abuse mitigation</a></h1>
+<p><strong>TODO</strong>: Actually write docs.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="msc2448-blurhash"><a class="header" href="#msc2448-blurhash">MSC2448: Blurhash</a></h1>
+<p><strong>TODO</strong>: Actually write docs.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+    </body>
+</html>

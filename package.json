@@ -16,7 +16,8 @@
   "scripts": {
     "build": "cuttlebelle && npm run build:css",
     "watch": "cuttlebelle -w",
-    "build:css": "cleancss --inline all -o site/assets/css/site.css assets/css/site.css"
+    "build:css": "cleancss --inline all -o site/assets/css/site.css assets/css/site.css",
+    "merge": "mkdir -p _site && cp -rv ./site/* ./_site/ && cp -rv ./old_versions/* ./_site/"
   },
   "dependencies": {
     "clean-css-cli": "^5.6.3",
