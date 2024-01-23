@@ -139,7 +139,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
-<p><a href="https://github.com/turt2live/matrix-media-repo">matrix-media-repo</a> (aka MMR) is a highly customizable
+<p><a href="https://github.com/t2bot/matrix-media-repo">matrix-media-repo</a> (aka MMR) is a highly customizable
 multi-domain media repository for Matrix. Intended for medium to large deployments, this media
 repo de-duplicates media while being fully compliant with the Matrix specification.</p>
 <p>Smaller/individual homeservers can still use this project, though it may be difficult to set
@@ -236,7 +236,7 @@ configuration section of this documentation), something similar to the following
 <p><strong>Note</strong>: Using <code>latest</code> is not recommended. Please use a tagged version instead.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="downloads"><a class="header" href="#downloads">Downloads</a></h1>
 <p>The latest official builds of the media repo's binaries can be found on
-<a href="https://github.com/turt2live/matrix-media-repo/releases">GitHub</a>. Download the one for your platform
+<a href="https://github.com/t2bot/matrix-media-repo/releases">GitHub</a>. Download the one for your platform
 or compile your own.</p>
 <p>After preparing a configuration file at <code>/etc/matrix-media-repo/media-repo.yaml</code> (see configuration
 section of this documentation), something similar to the following can be run:</p>
@@ -250,7 +250,7 @@ start.</p>
 <p><strong>Note</strong>: The <code>master</code> branch of the media repo is potentially unstable! Be sure to check out a
 tagged release for safety.</p>
 <p>The following can be run to compile your own binaries for matrix-media-repo:</p>
-<pre><code class="language-bash">git clone https://github.com/turt2live/matrix-media-repo.git
+<pre><code class="language-bash">git clone https://github.com/t2bot/matrix-media-repo.git
 cd matrix-media-repo
 ./build.sh
 </code></pre>
@@ -369,7 +369,7 @@ can be upgraded/restarted in any order.</p>
 image, and start it back up again.</p>
 <p>Some versions require mandatory configuration changes, or have other restrictions preventing
 such an easy upgrade. Check the notes in this section when upgrading to a listed version.</p>
-<p>A rolling changelog for MMR is available <a href="https://github.com/turt2live/matrix-media-repo/blob/master/CHANGELOG.md">here</a>.</p>
+<p>A rolling changelog for MMR is available <a href="https://github.com/t2bot/matrix-media-repo/blob/master/CHANGELOG.md">here</a>.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="upgrading-to-v130"><a class="header" href="#upgrading-to-v130">Upgrading to v1.3.0</a></h1>
 <h2 id="mandatory-configuration-change"><a class="header" href="#mandatory-configuration-change">Mandatory Configuration Change</a></h2>
 <p>Datastores are no longer managed by matrix-media-repo internally, meaning you MUST specify a datastore ID on each of your
@@ -432,7 +432,7 @@ path/server, for example, then you can simply update the path in the config for 
 split configs, per-domain configs, and fine-grained control over individual features. This
 section covers the minimum for configuring a media repo and does not cover feature-specific areas
 of the config: those are left for other areas of this documentation.</p>
-<p>The sample configuration can be found <a href="https://github.com/turt2live/matrix-media-repo/blob/master/config.sample.yaml">on GitHub</a>.</p>
+<p>The sample configuration can be found <a href="https://github.com/t2bot/matrix-media-repo/blob/master/config.sample.yaml">on GitHub</a>.</p>
 <h2 id="basic-configuration"><a class="header" href="#basic-configuration">Basic configuration</a></h2>
 <p>The following is the minimum required information to make use of MMR:</p>
 <pre><code class="language-yaml">repo:
@@ -663,7 +663,7 @@ the reverse proxy, though this can be disabled with the options below.</p>
     useForwardedHost: true
 </code></pre>
 <p>To disable all handling of <code>X-Forwarded-Host</code>, set <code>useForwardedHost</code> to <code>false</code>. Note this might be
-required when using the Kubernetes nginx ingress controller, per issue <a href="https://github.com/turt2live/matrix-media-repo/issues/202">#202</a>.</p>
+required when using the Kubernetes nginx ingress controller, per issue <a href="https://github.com/t2bot/matrix-media-repo/issues/202">#202</a>.</p>
 <p>To disable validation of the <code>X-Forwarded-For</code> header, accepting the value verbatim, set
 <code>trustAnyForwardedAddress</code> to <code>true</code>. This is typically useful in scenarios where the clients being
 proxied are on a private network which the media repo might ignore as potentially invalid.</p>
@@ -969,7 +969,7 @@ for the general media repo usage.</p>
   port: 9000
 </code></pre>
 <p>An example Grafana dashboard is available
-<a href="https://github.com/turt2live/matrix-media-repo/blob/master/docs/grafana.json">on GitHub</a>.</p>
+<a href="https://github.com/t2bot/matrix-media-repo/blob/master/docs/grafana.json">on GitHub</a>.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="shared-secret-authentication"><a class="header" href="#shared-secret-authentication">Shared secret authentication</a></h1>
 <p>Typically used by hosting providers, shared secret authentication can be optionally enabled to
 make requests as a media repo administrator without needing an account on any of the configured

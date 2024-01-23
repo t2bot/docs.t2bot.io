@@ -29,7 +29,7 @@ or test environment prior to using them in production.
 
 The last 6 weeks of releases, as well as the most recent release, are supported at any given time.
 
-Binaries can additionally be found on each of the [GitHub releases](https://github.com/turt2live/matrix-media-repo/releases)
+Binaries can additionally be found on each of the [GitHub releases](https://github.com/t2bot/matrix-media-repo/releases)
 for use in systemd or similar. On Linux you may need a fully updated version of `libde265-dev` and
 `libheif-dev`, matching the requirement of MMR. The exact requirements should be clear when starting
 MMR for the first time.

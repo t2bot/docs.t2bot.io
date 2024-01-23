@@ -147,7 +147,7 @@ the reverse proxy, though this can be disabled with the options below.</p>
     useForwardedHost: true
 </code></pre>
 <p>To disable all handling of <code>X-Forwarded-Host</code>, set <code>useForwardedHost</code> to <code>false</code>. Note this might be
-required when using the Kubernetes nginx ingress controller, per issue <a href="https://github.com/turt2live/matrix-media-repo/issues/202">#202</a>.</p>
+required when using the Kubernetes nginx ingress controller, per issue <a href="https://github.com/t2bot/matrix-media-repo/issues/202">#202</a>.</p>
 <p>To disable validation of the <code>X-Forwarded-For</code> header, accepting the value verbatim, set
 <code>trustAnyForwardedAddress</code> to <code>true</code>. This is typically useful in scenarios where the clients being
 proxied are on a private network which the media repo might ignore as potentially invalid.</p>

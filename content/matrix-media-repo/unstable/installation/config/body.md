@@ -13,7 +13,7 @@ and are automatically watched. Some environments may still prefer to restart the
 The configuration can additionally be split down into multiple files. This can make it easier to
 keep track of within version control.
 
-The latest version of the sample config can be found [in the GitHub repo](https://github.com/turt2live/matrix-media-repo/blob/master/config.sample.yaml).
+The latest version of the sample config can be found [in the GitHub repo](https://github.com/t2bot/matrix-media-repo/blob/master/config.sample.yaml).
 For a specific version's sample config, please review the relevant Git tag.
 
 Documentation for each config option is provided in the sample config file itself.
