@@ -14,4 +14,4 @@ create-missing = true
 
 [output.html]
 additional-css = []
-git-repository-url = "https://github.com/t2bot/docs.t2bot.io/tree/master/matrix-media-repo"
+git-repository-url = "https://github.com/t2bot/docs.t2bot.io/tree/main/matrix-media-repo"
