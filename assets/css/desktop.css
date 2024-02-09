@@ -21,7 +21,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 html,body {
-	background-color: var(--bg-color);
+	background-color: var(--container-bg-color);
 	/* background: radial-gradient(84.9% 52.16% at 31.56% 3.43%, var(--bg-start-color) 0%, var(--bg-color) 100%); */
 }
 
@@ -35,12 +35,12 @@ main {
 }
 
 header {
-	display: fixed;
+	position: sticky;
 	top: 0;
 	left: 0;
 	right: 0;
 	padding: 32px 40px;
-	background: linear-gradient(135deg, var(--bg-start-color), transparent);
+	background: linear-gradient(135deg, var(--bg-start-color), var(--bg-color));
 }
 
 header .header-int {
