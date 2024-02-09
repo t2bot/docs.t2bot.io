@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><title>docs.t2bot.io - matrix-media-repo -  Methods</title><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../.././assets/css/site.css"/></head><body><div class="top"><header role="banner"><div class="header-int"><p><a href="/"><img src="/assets/img/logo.png" alt="t2bot.io"></a></p>
+<p><a href="https://matrix.to/#/#community:t2bot.io">#community:t2bot.io</a>
+<a href="https://status.t2bot.io">status.t2bot.io</a>
+<a href="https://matrix.to/#/#help:t2bot.io">#help:t2bot.io</a></p>
+</div></header><main><div class="docs-page"><div class="toc"><a href="/matrix-media-repo/v1.3.4" class="toc-link">Introduction</a><a href="/matrix-media-repo/v1.3.4/developers" class="toc-link"> Developers</a><a href="/matrix-media-repo/v1.3.4/installation" class="toc-link">Installation</a><a href="/matrix-media-repo/v1.3.4/installation/config" class="toc-link indent"> Configuration</a><a href="/matrix-media-repo/v1.3.4/installation/server-names" class="toc-link indent"> Server Names</a><a href="/matrix-media-repo/v1.3.4/installation/methods" class="toc-link current indent"> Methods</a><a href="/matrix-media-repo/v1.3.4/deployment" class="toc-link"> Deployment</a><a href="/matrix-media-repo/v1.3.4/deployment/horizontal-scaling" class="toc-link indent"> Horizontal Scaling</a><a href="/matrix-media-repo/v1.3.4/deployment/high-availability" class="toc-link indent"> High Availability</a><a href="/matrix-media-repo/v1.3.4/upgrading" class="toc-link"> Upgrading</a><a href="/matrix-media-repo/v1.3.4/upgrading/to-130" class="toc-link indent"> Upgrading to v1.3.0</a></div><div class="content"><h1 id="installation-methods">Installation Methods</h1>
+<p>The provided Docker container is the preferred deployment approach, supporting environments commonly
+used by Matrix server hosting providers. It&#39;s recommended to first deploy MMR in a staging or test
+environment to catch any deployment-specific variations or dependencies.</p>
+<p>The Docker container can be run as follows:</p>
+<pre><code class="language-bash">docker run \
+  --restart unless-stopped \
+  -p 127.0.0.1:8000:8000 \
+  -v /etc/matrix-media-repo:/data \
+  docker.io/turt2live/matrix-media-repo:latest
+</code></pre>
+<p>There are tagged images for each release as well. It is <em>strongly</em> recommended that deployments use
+a tagged release instead of <code>latest</code>.</p>
+<p><strong>Note</strong>: MMR does not have a release candidate cycle. When the release is ready to go out, it is
+pushed out directly. This can mean there are bugs on release day. Please test all releases in a staging
+or test environment prior to using them in production.</p>
+<p>The last 6 weeks of releases, as well as the most recent release, are supported at any given time.</p>
+<p>Binaries can additionally be found on each of the <a href="https://github.com/t2bot/matrix-media-repo/releases">GitHub releases</a>
+for use in systemd or similar. On Linux you may need a fully updated version of <code>libde265-dev</code> and
+<code>libheif-dev</code>, matching the requirement of MMR. The exact requirements should be clear when starting
+MMR for the first time.</p>
+<p>If you prefer to compile the binaries yourself, please see the <a href="../../developers">developer documentation</a>.</p>
+</div></div></main></div><footer><p>Copyright ©️ 2024 - t2bot.io / Travis Ralston</p>
+</footer></body></html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html><html><head><title>docs.t2bot.io - matrix-media-repo -  Deployment</title><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href=".././assets/css/site.css"/></head><body><div class="top"><header role="banner"><div class="header-int"><p><a href="/"><img src="/assets/img/logo.png" alt="t2bot.io"></a></p>
+<p><a href="https://matrix.to/#/#community:t2bot.io">#community:t2bot.io</a>
+<a href="https://status.t2bot.io">status.t2bot.io</a>
+<a href="https://matrix.to/#/#help:t2bot.io">#help:t2bot.io</a></p>
+</div></header><main><div class="docs-page"><div class="toc"><a href="/matrix-media-repo/v1.3.4" class="toc-link">Introduction</a><a href="/matrix-media-repo/v1.3.4/developers" class="toc-link"> Developers</a><a href="/matrix-media-repo/v1.3.4/installation" class="toc-link">Installation</a><a href="/matrix-media-repo/v1.3.4/installation/config" class="toc-link indent"> Configuration</a><a href="/matrix-media-repo/v1.3.4/installation/server-names" class="toc-link indent"> Server Names</a><a href="/matrix-media-repo/v1.3.4/installation/methods" class="toc-link indent"> Methods</a><a href="/matrix-media-repo/v1.3.4/deployment" class="toc-link current"> Deployment</a><a href="/matrix-media-repo/v1.3.4/deployment/horizontal-scaling" class="toc-link indent"> Horizontal Scaling</a><a href="/matrix-media-repo/v1.3.4/deployment/high-availability" class="toc-link indent"> High Availability</a><a href="/matrix-media-repo/v1.3.4/upgrading" class="toc-link"> Upgrading</a><a href="/matrix-media-repo/v1.3.4/upgrading/to-130" class="toc-link indent"> Upgrading to v1.3.0</a></div><div class="content"><h1 id="deployment">Deployment</h1>
+<p>MMR sits between your reverse proxy and underlying homeserver software, such as Synapse or Dendrite.
+This allows clients to continue making requests to the server without needing to know of an alternative
+media handling setup.</p>
+<p>The easiest way to deploy MMR is to route all <code>/_matrix/media</code> endpoints to the MMR process. Note that
+with <a href="https://github.com/matrix-org/matrix-spec-proposals/pull/3911">MSC3911</a> and <a href="https://github.com/matrix-org/matrix-spec-proposals/pull/3916">MSC3916</a>,
+the specific set of endpoints may change.</p>
+<p>An example NGINX config would be:</p>
+<pre><code>server {
+  listen 443 ssl;
+  listen [::]:443 ssl;
+
+  # SSL options not shown - ensure the certificates are valid for your
+  # homeserver deployment.
+
+  # Redirect all traffic by default to the homeserver
+  location /_matrix {
+      proxy_read_timeout 60s;
+      proxy_set_header Host $host;
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_set_header X-Forwarded-For $remote_addr;
+      proxy_pass http://localhost:8008; # Point this towards your homeserver
+  }
+
+  # Redirect all media endpoints to MMR
+  location /_matrix/media {
+      proxy_read_timeout 60s;
+
+      # Make sure this matches your homeserver in your MMR config
+      # You may have to manually specify it if using delegation or the
+      # incoming `Host` doesn&#39;t match.
+      proxy_set_header Host $host;
+
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_set_header X-Forwarded-For $remote_addr;
+      proxy_pass http://localhost:8000; # Point this towards media-repo
+  }
+}
+</code></pre>
+</div></div></main></div><footer><p>Copyright ©️ 2024 - t2bot.io / Travis Ralston</p>
+</footer></body></html>
