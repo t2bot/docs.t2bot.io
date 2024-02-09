@@ -1,0 +1,18 @@
+@media (max-width: 800px) {
+  .docs-page {
+    flex-direction: column;
+  }
+
+  .docs-page .toc {
+    width: 100%;
+    border-bottom: 1px solid var(--accent-border-color);
+    border-right: none;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-bottom: 16px;
+  }
+
+  .docs-page .content {
+    padding: 0;
+  }
+}

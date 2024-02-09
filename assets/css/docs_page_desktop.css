@@ -1,7 +1,6 @@
 .docs-page {
   display: flex;
   flex-direction: row;
-  width: 95%;
 }
 
 .docs-page .toc {

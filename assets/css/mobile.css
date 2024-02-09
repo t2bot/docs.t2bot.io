@@ -1,15 +1,15 @@
 @media (max-width: 800px) {
-  header {
+  header .header-int {
     flex-direction: column;
   }
 
-	header > p:nth-child(2) {
+	.header-int > p:nth-child(2) {
 		display: flex;
 		flex-direction: column;
     margin-top: 8px;
 	}
 
-	header > p:nth-child(2) > a {
+	.header-int > p:nth-child(2) > a {
 		display: flex;
 		flex-direction: column;
 		text-align: left;
@@ -19,5 +19,6 @@
   main {
     margin-left: 40px;
     margin-right: 40px;
+    margin-top: 0;
   }
 }
