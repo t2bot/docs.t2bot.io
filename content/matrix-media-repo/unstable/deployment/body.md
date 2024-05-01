@@ -46,5 +46,31 @@ server {
       proxy_set_header X-Forwarded-For $remote_addr;
       proxy_pass http://localhost:8000; # Point this towards media-repo
   }
+
+  # Redirect MSC3916 endpoints to MMR
+  location /_matrix/client/unstable/org.matrix.msc3916 {
+      proxy_read_timeout 60s;
+
+      # Make sure this matches your homeserver in your MMR config
+      # You may have to manually specify it if using delegation or the
+      # incoming `Host` doesn't match.
+      proxy_set_header Host $host;
+
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_set_header X-Forwarded-For $remote_addr;
+      proxy_pass http://localhost:8000; # Point this towards media-repo
+  }
+  location /_matrix/federation/unstable/org.matrix.msc3916 {
+      proxy_read_timeout 60s;
+
+      # Make sure this matches your homeserver in your MMR config
+      # You may have to manually specify it if using delegation or the
+      # incoming `Host` doesn't match.
+      proxy_set_header Host $host;
+
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_set_header X-Forwarded-For $remote_addr;
+      proxy_pass http://localhost:8000; # Point this towards media-repo
+  }
 }
 ```

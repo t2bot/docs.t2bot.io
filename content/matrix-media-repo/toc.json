@@ -4,6 +4,7 @@
   "installation",
   "installation/config",
   "installation/server-names",
+  "installation/signing-key",
   "installation/methods",
   "deployment",
   "deployment/horizontal-scaling",
