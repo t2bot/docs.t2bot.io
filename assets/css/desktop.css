@@ -93,4 +93,11 @@ pre {
 
 pre, code {
 	font-family: 'Inconsolata', monospace;
+	padding: 2px;
+	border: 1px solid var(--code-border-color);
+	border-radius: 4px;
+}
+
+pre > code {
+	border: none;
 }
