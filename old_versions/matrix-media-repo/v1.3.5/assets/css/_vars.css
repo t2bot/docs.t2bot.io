@@ -1,0 +1,12 @@
+:root {
+  --bg-color: #000;
+  --fg-color: #fff;
+  --bg-start-color: #2A1640;
+  --accent-color: #a254f5;
+  --accent-border-color: rgb(105, 105, 105, 0.9);
+  --fg-link-color: rgba(255, 255, 255, 0.75);
+  --fg-link-hover-color: #a254f5;
+  --fg-footer-color: rgba(255, 255, 255, 0.75);
+  --container-bg-color: #19191c;
+  --code-border-color: #555;
+}

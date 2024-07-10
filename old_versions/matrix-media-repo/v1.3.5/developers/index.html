@@ -1,0 +1,37 @@
+<!DOCTYPE html><html><head><title>docs.t2bot.io - matrix-media-repo -  Developers</title><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../.././assets/css/site.css"/></head><body><div class="top"><header role="banner"><div class="header-int"><p><a href="/"><img src="/assets/img/logo.png" alt="t2bot.io"></a></p>
+<p><a href="https://matrix.to/#/#community:t2bot.io">#community:t2bot.io</a>
+<a href="https://status.t2bot.io">status.t2bot.io</a>
+<a href="https://matrix.to/#/#help:t2bot.io">#help:t2bot.io</a></p>
+</div></header><main><div class="docs-page"><div class="toc"></div><div class="content"><h1 id="developer-documentation">Developer Documentation</h1>
+<p><strong>⚠️ If you are not a developer, or not compiling MMR yourself, you can ignore this page.</strong></p>
+<p><strong>⚠️ The instructions on this page are subject to change without notice. Please check back for each
+release.</strong></p>
+<p><strong>⚠️ No support is available for self-compiled MMR binaries.</strong></p>
+<h2 id="compilation">Compilation</h2>
+<p>Requirements:</p>
+<ul>
+<li>Go 1.20</li>
+<li><code>libde265-dev</code> and <code>libheif-dev</code> (Windows users: see below for how to install these)</li>
+</ul>
+<p><strong>Note</strong>: The main branch (default when cloning a git repo) is <em>unstable</em>. Be sure to check out a tag
+if you&#39;re building production binaries. For developers aiming to contribute, use the main branch.</p>
+<p>A <code>./build.sh</code> script is provided in the repository - run this to build your binaries. They will end
+up in <code>./bin</code>, unless there were errors during compilation.</p>
+<h3 id="windows-users">Windows Users</h3>
+<p><code>./build.sh</code> won&#39;t work automatically, and will error complaining about <code>pkg-config</code> or similar. To
+fix this, <a href="https://gtk-rs.org/gtk4-rs/stable/latest/book/installation_windows.html#pkg-config">install pkg-config</a>
+and then run the following:</p>
+<pre><code class="language-bash">git clone https://github.com/Microsoft/vcpkg.git
+cd vcpkg
+.\bootstrap-vcpkg.bat
+.\vcpkg integrate install
+.\vcpkg install libde265:x64-windows libde265:x86-windows
+.\vcpkg install libheif:x64-windows libheif:x86-windows
+</code></pre>
+<p>You may need to update your <code>PKG_CONFIG_PATH</code> to include <code>.\installed\x64-windows\lib\pkgconfig</code> and
+<code>.\installed\x86-windows\lib\pkgconfig</code> from the <code>vcpkg</code> checkout.</p>
+<p>You may also need to update your <code>PATH</code> to include <code>.\installed\x64-windows\bin</code> and <code>.\installed\x86-windows\bin</code>,
+again from the <code>vcpkg</code> checkout.</p>
+<p>Afterwards, simply restart your terminal and re-run <code>./build.sh</code>.</p>
+</div></div></main></div><footer><p>Copyright ©️ 2024 - t2bot.io / Travis Ralston</p>
+</footer></body></html>

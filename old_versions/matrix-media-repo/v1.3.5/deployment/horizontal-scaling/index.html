@@ -1,0 +1,25 @@
+<!DOCTYPE html><html><head><title>docs.t2bot.io - matrix-media-repo -  Horizontal Scaling</title><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../../.././assets/css/site.css"/></head><body><div class="top"><header role="banner"><div class="header-int"><p><a href="/"><img src="/assets/img/logo.png" alt="t2bot.io"></a></p>
+<p><a href="https://matrix.to/#/#community:t2bot.io">#community:t2bot.io</a>
+<a href="https://status.t2bot.io">status.t2bot.io</a>
+<a href="https://matrix.to/#/#help:t2bot.io">#help:t2bot.io</a></p>
+</div></header><main><div class="docs-page"><div class="toc"></div><div class="content"><h1 id="horizontal-scaling">Horizontal Scaling</h1>
+<p>MMR&#39;s horizontal scaling is achieved through the <code>MACHINE_ID</code> environment variable. The default machine
+ID is <code>0</code>, and is responsible for all background tasks. Each deployed process <em>must</em> have a distinct
+machine ID in order to function. The machine ID <em>must</em> be between <code>0</code> and <code>1023</code>, allowing for a
+total of 1024 &quot;workers&quot;.</p>
+<p>All MMR processes <em>must</em> additionally share the same config files, database, and Redis backend. The
+Redis server is used for inter-process communication. Once set up, any MMR process in the cluster can
+handle any request for load balancing.</p>
+<p>Typically, it is expected that there be roughly aligned &quot;sub-clusters&quot;: a set of processes dedicated
+to handling each of downloads, uploads, URL previews, etc. At a minimum, it is best to at least split
+URL previews off to a dedicated process to avoid network request congestion. Admin APIs are best routed
+to machine ID <code>0</code>.</p>
+<p>Thumbnails are recommended to be moved to high-memory machines where possible in high-traffic environments.</p>
+<p>The number of machines/processes needed largely depends on the number of homeservers being hosted by
+a single cluster. For approximately every 500 homeservers there should be 1 additional MMR process,
+rounded up (assuming each process doesn&#39;t have a dedicated purpose).</p>
+<p>Horizontal scaling is <em>possible</em> with file-backed datastores, however all processes need to have access
+to the directory at the exact same path. It is instead suggested to use exclusively S3 datastores, where
+all processes can more easily fetch contents.</p>
+</div></div></main></div><footer><p>Copyright ©️ 2024 - t2bot.io / Travis Ralston</p>
+</footer></body></html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html><html><head><title>docs.t2bot.io - matrix-media-repo -  Signing Keys</title><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../../.././assets/css/site.css"/></head><body><div class="top"><header role="banner"><div class="header-int"><p><a href="/"><img src="/assets/img/logo.png" alt="t2bot.io"></a></p>
+<p><a href="https://matrix.to/#/#community:t2bot.io">#community:t2bot.io</a>
+<a href="https://status.t2bot.io">status.t2bot.io</a>
+<a href="https://matrix.to/#/#help:t2bot.io">#help:t2bot.io</a></p>
+</div></header><main><div class="docs-page"><div class="toc"></div><div class="content"><h1 id="signing-keys">Signing Keys</h1>
+<p>MMR is capable of <a href="https://github.com/matrix-org/matrix-spec-proposals/pull/3916">MSC3916</a>-style
+authentication, which requires the use of a &quot;signing key&quot; to authorize outbound federated requests
+for media. MMR can authorize inbound requests without a signing key.</p>
+<p>To set up a signing key for MMR:</p>
+<ol>
+<li>Back up your existing homeserver signing key, and store it in a safe place. The signing key
+effectively grants full access to your server and events, and should not be disclosed to anyone.</li>
+<li>Download the <code>generate_signing_key</code> and <code>combine_signing_keys</code> tools for your version of MMR from
+the <a href="https://github.com/t2bot/matrix-media-repo/releases">GitHub releases page</a>.</li>
+<li>Run <code>./generate_signing_key -output mmr.signing.key</code> to create a signing key usable with MMR.</li>
+<li>If you&#39;re using Synapse as your homeserver software, run <code>./combine_signing_keys -format synapse -output ./merged.signing.key ./existing.signing.key ./mmr.signing.key</code>
+to combine the signing keys, being sure to list Synapse&#39;s existing signing key <em>first</em> in the
+arguments. For all other homeserver software, please consult the homeserver documentation for
+how to deploy multiple signing keys. Note that not all homeserver software options support
+multiple signing keys.</li>
+<li>Run <code>cat ./merged.signing.key</code> to verify that your existing signing key ID is on the first line.
+You can get your key ID from <code>GET /_matrix/key/v2/server</code> against your homeserver in a web browser.
+If your existing signing key is <em>not</em> first, re-run the steps above, noting the order of keys
+supplied to <code>./combine_signing_keys</code> is important.</li>
+<li>Deploy <code>./merged.signing.key</code> to your Synapse server in place of the existing signing key,
+restarting it.</li>
+<li>Deploy <code>./mmr.signing.key</code> alongside MMR and specified as <code>signingKeyPath</code> for that homeserver
+in your MMR config.</li>
+</ol>
+<p>In the event that you ever need to revoke MMR&#39;s signing key from your homeserver, restore your
+signing key from the most recent backup. If your homeserver&#39;s signing key changes after running the
+above steps, re-run the steps above to set up your server with the new key. Note that it&#39;s considered
+good practice to list your old signing keys, including MMR&#39;s revoked keys, under <code>old_verify_keys</code>
+on <code>GET /_matrix/key/v2/server</code> - many homeservers offer a config option to populate this field.</p>
+</div></div></main></div><footer><p>Copyright ©️ 2024 - t2bot.io / Travis Ralston</p>
+</footer></body></html>

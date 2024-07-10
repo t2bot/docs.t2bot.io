@@ -1,0 +1,35 @@
+.docs-page {
+  display: flex;
+  flex-direction: row;
+}
+
+.docs-page .toc {
+  width: 192px;
+  min-width: 192px;
+  border-right: 1px solid var(--accent-border-color);
+  padding: 8px 0;
+}
+
+.docs-page .toc .toc-link {
+  display: block;
+  padding: 4px 6px;
+  margin: 2px 4px;
+  border-left: 2px solid transparent;
+}
+
+.docs-page .toc .toc-link.current {
+  border-left: 2px solid var(--accent-color);
+}
+
+.docs-page .toc .toc-link.indent {
+  margin-left: 24px;
+}
+
+.docs-page .content {
+  padding: 8px 32px;
+}
+
+.docs-page .content > h1:first-child {
+  padding-top: 0;
+  margin-top: 0;
+}

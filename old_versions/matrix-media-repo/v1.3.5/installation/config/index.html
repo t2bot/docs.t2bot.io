@@ -1,0 +1,56 @@
+<!DOCTYPE html><html><head><title>docs.t2bot.io - matrix-media-repo -  Configuration</title><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../../.././assets/css/site.css"/></head><body><div class="top"><header role="banner"><div class="header-int"><p><a href="/"><img src="/assets/img/logo.png" alt="t2bot.io"></a></p>
+<p><a href="https://matrix.to/#/#community:t2bot.io">#community:t2bot.io</a>
+<a href="https://status.t2bot.io">status.t2bot.io</a>
+<a href="https://matrix.to/#/#help:t2bot.io">#help:t2bot.io</a></p>
+</div></header><main><div class="docs-page"><div class="toc"></div><div class="content"><h1 id="configuration">Configuration</h1>
+<p>MMR&#39;s configuration is extensive and supports a wide range of features. To avoid having to restart
+the process/container every time a config change is made, most options support being live reloaded
+and are automatically watched. Some environments may still prefer to restart the container, however.</p>
+<p>The configuration can additionally be split down into multiple files. This can make it easier to
+keep track of within version control.</p>
+<p>The latest version of the sample config can be found <a href="https://github.com/t2bot/matrix-media-repo/blob/main/config.sample.yaml">in the GitHub repo</a>.
+For a specific version&#39;s sample config, please review the relevant Git tag.</p>
+<p>Documentation for each config option is provided in the sample config file itself.</p>
+<h2 id="split-configs">Split Configs</h2>
+<p>A shallow directory may be used instead of a single config file to layer the config. Config files are
+applied alphabetically and should be prefixed with a number to guarantee order. Each file overrides
+the previous file until all files are read. MMR will not recurse into further directories.</p>
+<p>In Docker environments, use the <code>REPO_CONFIG</code> environment variable to specify the path to the directory.
+For binaries, use the <code>-config</code> command line argument.</p>
+<h2 id="per-domain-configs">Per-domain Configs</h2>
+<p>Basic configuration information about each of your servers can be supplied in the main configuration,
+however if an option such as maximum upload size needs to be changed on a per-domain basis, then per-domain
+config files are required.</p>
+<p>A per-domain config file is placed in the same directory as split config files. When using a per-domain
+file, the <code>homeservers</code> option of the main config <em>should not</em> include the domain.</p>
+<p>The config file then must contain the following to be considered a per-domain config file:</p>
+<pre><code class="language-yaml">homeserver: example.org
+csApi: &quot;https://example.org&quot;
+backoffAt: 10
+adminApiKind: &quot;synapse&quot;
+</code></pre>
+<p>The values may of course change, but the fields do need to be present. Then, any other option which
+requires overriding from the main config can then be specified. The following <em>cannot</em> be changed at
+a per-domain level because they affect the entire MMR process:</p>
+<ul>
+<li><code>repo</code></li>
+<li><code>federation</code></li>
+<li><code>database</code></li>
+<li><code>homeservers</code></li>
+<li><code>admins</code></li>
+<li><code>sharedSecretAuth</code></li>
+<li><code>downloads.numWorkers</code></li>
+<li><code>downloads.expireAfterDays</code></li>
+<li><code>urlPreviews.numWorkers</code></li>
+<li><code>urlPreviews.expireAfterDays</code></li>
+<li><code>thumbnails.numWorkers</code></li>
+<li><code>thumbnails.expireAfterDays</code></li>
+<li><code>rateLimit</code></li>
+<li><code>metrics</code></li>
+<li><code>redis</code></li>
+<li><code>sentry</code></li>
+<li><code>tasks</code></li>
+<li><code>pgo</code></li>
+</ul>
+</div></div></main></div><footer><p>Copyright ©️ 2024 - t2bot.io / Travis Ralston</p>
+</footer></body></html>
