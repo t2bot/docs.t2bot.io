@@ -48,7 +48,7 @@ server {
   }
 
   # Redirect MSC3916 endpoints to MMR
-  location  /_matrix/client/v1/media {
+  location /_matrix/client/v1/media {
       proxy_read_timeout 60s;
 
       # Make sure this matches your homeserver in your MMR config
@@ -60,7 +60,7 @@ server {
       proxy_set_header X-Forwarded-For $remote_addr;
       proxy_pass http://localhost:8000; # Point this towards media-repo
   }
-  location  /_matrix/federation/v1/media {
+  location /_matrix/federation/v1/media {
       proxy_read_timeout 60s;
 
       # Make sure this matches your homeserver in your MMR config
